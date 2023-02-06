@@ -1,0 +1,26 @@
+[
+    {
+        "name": "Sangeet Music Player",
+        "description": "Sangeet is an android app made with python using the Kivy and kivyMD. It can play, pause, next, previous and add music from folder.",
+        "links": [
+            {
+                "name": "Github",
+                "url": "www.google.com"
+            }
+        ]
+    },
+    {
+        "name": "Sangeet Music Player2 ",
+        "description": "Sangeet is an android app made with python using the Kivy and kivyMD. It can play, pause, next, previous and add music from folder.",
+        "links": [
+            {
+                "name": "Github",
+                "url": "www.google.com"
+            },
+            {
+                "name": "Github",
+                "url": "www.google.com"
+            }
+        ]
+    }
+]
