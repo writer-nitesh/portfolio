@@ -1,0 +1,211 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+:root {
+  --textColor: #5E5E5E;
+}
+
+.profilepic {
+  width: 100px;
+  height: 100px;
+  background-color: #303030;
+  /* background-image: url('https://images.pexels.com/photos/1310474/pexels-photo-1310474.jpeg?auto=compress&cs=tinysrgb&dpr=2'); */
+  /* background-position: center; */
+  /* background-size: cover; */
+  /* background-repeat: no-repeat; */
+  color: white;
+  font-size: 50px;
+  border-radius: 50%;
+}
+
+.nav {
+  margin-top: 4%;
+  border-bottom: 1px solid var(--textColor);
+  width: 50%;
+}
+
+.name {
+  font-size: 25px;
+  text-align: center;
+  color: var(--textColor);
+  padding: 15px;
+
+}
+
+.text {
+  color: var(--textColor);
+  text-align: center;
+
+}
+
+.socialLinks {
+  padding-top: 15px;
+}
+
+.socialLink {
+  border-radius: 50%;
+  margin: 5px;
+  text-decoration: none;
+  color: rgb(49, 49, 49);
+  font-size: 20px;
+}
+
+.links {
+  width: 100%;
+  text-align: center;
+  padding: 15px;
+}
+
+.link {
+
+  color: var(--textColor);
+  text-decoration: none;
+  padding: 5px;
+  font-size: 15px;
+  margin: 5px;
+  text-align: center;
+
+}
+
+.link:hover {
+  border-bottom: 2px solid var(--textColor);
+
+}
+
+.vtext {
+  writing-mode: vertical-lr;
+  transform: rotate(180deg);
+  text-align: center;
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 10px;
+  color: var(--textColor);
+  padding: 15px;
+  text-transform: uppercase;
+}
+
+section {
+  width: 50%;
+  margin: 50px;
+}
+
+
+
+.paragraph {
+  color: var(--textColor);
+  margin-left: 50px;
+  width: 80%;
+
+
+}
+
+
+
+/* Progress Bar */
+
+.progress {
+  width: 100%;
+  height: 1rem;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+
+
+/* For Chrome or Safari */
+progress::-webkit-progress-bar {
+  background-color: #D3D3D3;
+  width: 100%;
+}
+
+progress::-webkit-progress-value {
+  background-color: #555555 !important;
+}
+
+
+/* For Firefox */
+progress {
+  background-color: #D3D3D3;
+}
+
+progress::-moz-progress-bar {
+  background-color: #555555 !important;
+}
+
+/* For IE10 */
+progress {
+  background-color: #D3D3D3;
+}
+
+progress {
+  background-color: #555555;
+}
+
+
+/* Footer */
+
+.f-text {
+  font-size: 10px;
+  padding: 5px;
+}
+
+.work_Card {
+  margin: 10px;
+}
+
+.work_name {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.work_links {
+  width: 100%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.work_link {
+  margin-top: 15px;
+  margin-bottom: 5px;
+  margin-right: 20px;
+  text-decoration: none;
+  color: var(--textColor);
+  font-size: 15px;
+  font-weight: 600;
+
+}
+
+.more {
+  background-color: #555555;
+  width: 100%;
+  padding: 5px;
+
+}
+
+.more_link {
+  color: white;
+  text-decoration: none;
+  text-align: center;
+}
+
+@media only screen and (max-width: 600px) {
+
+  section {
+    width: 100%;
+
+  }
+
+  .paragraph {
+    margin-left: 30px;
+    margin-right: 50px;
+  }
+
+  .nav {
+    width: 90%;
+  }
+}
