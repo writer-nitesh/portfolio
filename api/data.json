@@ -1,25 +1,29 @@
 [
     {
-        "name": "Sangeet Music Player",
-        "description": "Sangeet is an android app made with python using the Kivy and kivyMD. It can play, pause, next, previous and add music from folder.",
+        "name": "rentmyCastle ",
+        "description": "rentmyCastle is a website that helps students find the perfect space near their college. It uses reactJS and appwrite as the main technologies for front-end and back-end development. rentmyCastle aims to provide a simple and user-friendly interface for students to browse, compare and book their ideal accommodation.",
         "links": [
             {
-                "name": "Github",
-                "url": "www.google.com"
+                "name": "GitHub",
+                "url": "https://github.com/Niteshsingh2001/rent_my_castle"
+            }
+            {
+                "name": "Website",
+                "url": "https://www.rentmycastle.in/"
             }
         ]
     },
     {
-        "name": "Sangeet Music Player2 ",
+        "name": "TechTrivia ",
         "description": "Sangeet is an android app made with python using the Kivy and kivyMD. It can play, pause, next, previous and add music from folder.",
         "links": [
             {
-                "name": "Github",
-                "url": "www.google.com"
+                "name": "Snack",
+                "url": "https://snack.expo.dev/@winnerjcks/native"
             },
             {
-                "name": "Github",
-                "url": "www.google.com"
+                "name": "App",
+                "url": "https://play.google.com/store/apps/details?id=com.devdividends.techtrivia&hl=en&gl=US"
             }
         ]
     }
