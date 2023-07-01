@@ -3,6 +3,8 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
+  user-select: none;
+  user-zoom: fixed;
 }
 
 :root {
@@ -99,10 +101,13 @@ section {
   color: var(--textColor);
   margin-left: 50px;
   width: 80%;
-
+  line-height: 150%;
+  font-size: large;
+  text-align: justify;
+  text-justify: inter-word;
+  /* background-color: red; */
 
 }
-
 
 
 /* Progress Bar */
@@ -155,18 +160,18 @@ progress {
 }
 
 .work_Card {
-  margin: 10px;
+  margin-bottom: 15px;
 }
 
 .work_name {
-  padding-top: 5px;
-  padding-bottom: 5px;
+  margin-bottom: 5px;
 }
 
 .work_links {
   width: 100%;
   padding-top: 5px;
   padding-bottom: 5px;
+  /* background-color: red; */
 }
 
 .work_link {
@@ -203,9 +208,11 @@ progress {
   .paragraph {
     margin-left: 30px;
     margin-right: 50px;
+
   }
 
   .nav {
     width: 90%;
   }
 }
+

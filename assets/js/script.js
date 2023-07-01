@@ -6,17 +6,16 @@ axios.get(API_URL)
 
         data = response.data
         console.log(data)
-        let html = `<div class=" work_Card">`;
+        let html = `<div>`;
 
         for (let i = 0; i <= 1; i++) {
 
             html += `
-                
+                <div class=" work_Card">
                 <h3 class="work_name">${data[i].name}</h3>
                 <p>${data[i].description}</p>
                 <div class="work_links ">
                 `
-
 
             for (let j = 0; j < data[i].links.length; j++) {
 
@@ -25,7 +24,7 @@ axios.get(API_URL)
                         `
 
             }
-            html += "</div >\n"
+            html += "</div ></div>\n"
         }
         console.log(html)
         work.innerHTML = html;

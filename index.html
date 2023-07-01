@@ -8,6 +8,11 @@
   <meta name="keywords" content="HTML, CSS, JavaScript, Python">
   <meta name="author" content="Nitesh Singh">
 
+  <meta property="og:title" content="Nitesh Singh - Fullstack Devloper" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/images/ogimage.png" />
+  <meta property="og:url" content="https://niteshsingh2001.github.io/portfolio/" />
+
   <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
   <title>Nitesh Singh</title>
 
@@ -21,50 +26,49 @@
 </head>
 
 <body>
+  <!-- Header -->
   <header class="c c-center c-v-center">
     <nav class="nav c c-center c-v-center">
-
-      <div class="profilepic c c-center c-v-center">Ni</div>
+      <a href="assets/pages/card.html" class="profilepic c c-center c-v-center" style="text-decoration: none;">Ni</a>
       <h3 class="name">Nitesh Singh</h3>
       <p class="text">Developing real life super power</p>
 
+      <!-- Social Media Links -->
       <div class="socialLinks">
         <a href="mailto:ni30singh420@gmail.com" class="socialLink"><i class="bi bi-envelope-at-fill"></i></a>
         <a href="https://github.com/Niteshsingh2001" class="socialLink"><i class="bi bi-github"></i></a>
         <a href="https://www.linkedin.com/in/nitesh-singh-641769209/" class="socialLink"><i
             class="bi bi-linkedin"></i></a>
-
       </div>
 
+      <!-- Navigation Links -->
       <div class="links">
         <a href="#aboutme" class="link">About Me </a>
         <a href="#skill" class="link">Skills </a>
         <a href="#work" class="link">My Work </a>
       </div>
-
     </nav>
-
   </header>
 
+  <!-- Main -->
   <main id="main_section" class="c c-center c-v-center">
 
+    <!-- About -->
     <section id="aboutme" class="r r-center r-v-center">
       <h2 class="vtext">About me</h2>
-      <p class="paragraph ">
-        Hi there! My name is Nitesh Singh and I am driven by my passion for technology and its limitless potential to
-        solve complex problems. My expertise includes HTML, CSS, JavaScript, and Python, and I have a strong
-        understanding of web development and programming concepts. I approach each project with the goal of pushing the
-        limits of what can be achieved while continuously learning and growing. I am eager to expand my knowledge and
-        make a positive impact in the field of computer science.
+      <p class="paragraph">
+        Hi there! I'm Nitesh Singh, a full-stack developer who specializes in transforming bugs into features. With a
+        robust expertise in front-end and back-end development, my goal is to craft seamless digital experiences that go
+        beyond just functioning on my own computer.
       </p>
     </section>
 
 
+    <!-- Skills -->
     <section id="skill" class="r r-center r-v-center">
       <h2 class="vtext">Skills</h2>
 
       <div class="paragraph">
-
         <div>
           <span>HTML</span>
           <progress class="progress" value="50" max="100"></progress>
@@ -87,16 +91,14 @@
           <span>React</span>
           <progress class="progress" value="30" max="100"></progress>
         </div>
-
-
       </div>
     </section>
 
+    <!-- work -->
     <section id="work" class="r r-center r-v-center">
       <h2 class="vtext">My Work</h2>
 
       <div class="paragraph c c-center c-v-center">
-
         <div id="my_work" class="c c-center c-v-center">
 
         </div>
@@ -107,13 +109,13 @@
       </div>
     </section>
 
-
-
-     <footer>
+  </main>
+  <!-- Footer -->
+  <footer>
     <p class="text f-text">Thanks for visitng</p>
     <p class="text">Made with <span style="color: #FC4850;">Love</span></p>
     <p class="text f-text">Not With HTML CSS JavaScript</span>
-      </footer>
+  </footer>
 
 </body>
 <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
