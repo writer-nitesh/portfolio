@@ -3,9 +3,7 @@ let work = document.getElementById("my_work")
 
 axios.get(API_URL)
     .then(response => {
-
         data = response.data
-        console.log(data)
         let html = `<div>`;
 
         for (let i = 0; i <= 1; i++) {
@@ -26,7 +24,6 @@ axios.get(API_URL)
             }
             html += "</div ></div>\n"
         }
-        console.log(html)
         work.innerHTML = html;
     })
     .catch(error => {
