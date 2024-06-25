@@ -1,0 +1,33 @@
+---
+import Info from "../data/info";
+import Header from "../components/header.astro";
+import Logo from "../components/logo.astro";
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="description" content={Info.description} />
+		<meta name="keywords" content="HTML, CSS, JavaScript, Python" />
+		<meta name="author" content={Info.name} />
+
+		<meta property="og:title" content={Info.name} />
+		<meta property="og:type" content="website" />
+		<meta property="og:image" content="/assets/images/ogimage.png" />
+		<meta property="og:url" content={Info.url} />
+
+		<meta property="og:image:width" content="1080" />
+		<meta property="og:image:height" content="1080" />
+
+		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+		<title>{Info.name}</title>
+	</head>
+	<body>
+		<h1>
+			{Info.description}
+			<Header />
+			<Logo/>
+		</h1>
+	</body>
+</html>
