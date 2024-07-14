@@ -1,55 +1,71 @@
-interface SocialLink {
-    name: string
-    url: string
-}
-
-interface Project {
-    name: string
-    description: Array<string>
-    link: string
-    start: Date
-    end: Date | "Present"
-    technology_used: Array<String>
-}
-
-interface Experience {
-    position: string
-    location: string
-    company_name: string
-    company_link?: string
-    start: Date
-    end: Date | "Present"
-    description: Array<string>
-    skills: Array<string>
-}
-
-interface Studies {
-    course: string
-    institution: string
-    start: Date
-    end: Date | "Present"
-}
-
-interface Info {
-    name: string
-    description: string
-    about: string
-    url: string
-    profile_image?: string
-    // work_experience: Array<Experience>
-    // studies: Array<Studies>
-    // projects: Array<Project>
-    // social_links: Array<SocialLink>
-    // certifications: Array<string>
-}
-
+import type { Info } from "../utils/types"
+import projects from "./projects"
 
 const info: Info = {
     name: "Nitesh Singh",
-    about: "Test",
-    description: "dsa",
+    gender: "Male",
+    description: "Developing real life super power",
     url: "https://nitesh-singh.vercel.app/",
-    profile_image: "https://nitesh-singh.vercel.app/assets/images/profile.png",
+    profile_image: "/assets/images/profile.jpg",
+    location: {
+        city: "Haldwani",
+        state: "Uttarakhand",
+        country: "India",
+    },
+    work_experience: [
+        {
+            company_name: "RFM360",
+            description: ["sada", "wa"],
+            start: "May 2022",
+            end: "December 2022",
+            location: "remote",
+            position: "Python Developer",
+            skills: ["Django"]
+        }
+    ],
+    about: "Hi there! I'm Nitesh Singh, a full-stack developer who specializes in transforming bugs into features. With a robust expertise in front-end and back-end development, my goal is to craft seamless digital experiences that go beyond just functioning on my own computer.",
+    education: [
+        {
+            course: "Bachelor of Computer Applications",
+            institution: "Graphic Era Hill University",
+            start: "September 2022",
+            end: "Present",
+            location: "Bhimtal, Uttarakhand"
+        },
+        {
+            course: "Intermediate",
+            institution: "Rainbow Academy Sr. Sec. School",
+            start: "April 2019",
+            end: "March 2020",
+            location: "Haldwani, Uttarakhand"
+        },
+        {
+            course: "High School",
+            institution: "Rainbow Academy Sr. Sec. School",
+            start: "April 2017",
+            end: "March 2018",
+            location: "Haldwani, Uttarakhand"
+        }
+    ],
+    social_links: [
+        {
+            name: "Github",
+            url: "https://github.com/niteshsingh2001"
+        },
+        {
+            name: "E-mail",
+            url: "singhnitesh.2001@outlook.com"
+        },
+        {
+            name: "LinkedIn",
+            url: "https://www.linkedin.com/in/nitesh-singh-641769209/"
+        }
+    ],
+    certifications: [
+        "Python for beginners"
+    ],
+    projects: projects,
+    skills: ["HTML", "CSS", "JavaScript", "Python", "PHP", "ReactJS", "NextJS", "NodeJS", "Django", "Git/Github", "Redux Toolkit", "MySQL", "MongoDB"]
 }
 
 export default info

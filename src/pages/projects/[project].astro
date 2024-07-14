@@ -1,0 +1,89 @@
+---
+import data from "../../data/info";
+import Main from "../../layout/main.astro";
+import Base from "../../layout/base.astro";
+import type { Project } from "../../utils/types";
+export const prerender = true;
+export const getStaticPaths = () => {
+    const path = data.projects.map((project) => {
+        return {
+            params: { project: project.name },
+            props: {
+                project,
+            },
+        };
+    });
+
+    return path;
+};
+
+interface Props {
+    project: Project;
+}
+
+const { project } = Astro.props;
+const { name, description, end, image, links, start, technology_used } =
+    project;
+---
+
+<Base>
+    <Main>
+        <div
+            class="lg:w-1/2 lg:px-0 px-4 z-50 flex flex-col items-start justify-start gap-6 py-8"
+        >
+            <div class="w-full flex flex-col gap-2">
+                <h1 class="text-2xl capitalize font-bold">{name}</h1>
+                <div
+                    class="flex lg:flex-row flex-col items-start gap-2 justify-between"
+                >
+                    <div class="flex gap-2">
+                        {
+                            links.live && (
+                                <a class="underline" href={links.live}>
+                                    Live
+                                </a>
+                            )
+                        }
+                        {
+                            links.live && (
+                                <a class="underline" href={links.source}>
+                                    Source Code
+                                </a>
+                            )
+                        }
+                    </div>
+                    <span>{start} - {end}</span>
+                </div>
+            </div>
+
+            <div class="w-full shadow-md overflow-hidden rounded-md">
+                <img
+                    src={image
+                        ? image
+                        : "/assets/images/no-picture-available-placeholder-thumbnail.webp"}
+                    alt=""
+                    class="object-cover h-full w-full rounded-md"
+                />
+            </div>
+
+            <div class="leading-8">
+                {
+                    description.map((item) => {
+                        return <p>{item}</p>;
+                    })
+                }
+            </div>
+            <div class="flex flex-wrap gap-1">
+                {
+                    technology_used.map((tech) => {
+                        return (
+                            <span class="bg-black text-white  text-xs rounded-full px-3 py-1">
+                                {tech}
+                            </span>
+                        );
+                    })
+                }
+            </div>
+        </div>
+    </Main>
+</Base>

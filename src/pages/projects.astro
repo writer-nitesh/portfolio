@@ -1,0 +1,22 @@
+---
+import Main from "../layout/main.astro";
+import Base from "../layout/base.astro";
+import Card from "../components/card.astro";
+import data from "../data/info";
+const { projects } = data;
+---
+
+<Base>
+    <Main>
+        <div class="w-[80%] py-5 gap-4 flex flex-col">
+            <h1 class="text-2xl font-bold">Projects</h1>
+            <div class="flex gap-8 items-center px-0 justify-start flex-wrap">
+                {
+                    projects.map((project) => {
+                        return <Card project={project} />;
+                    })
+                }
+            </div>
+        </div>
+    </Main>
+</Base>

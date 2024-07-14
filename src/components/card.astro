@@ -1,0 +1,43 @@
+---
+import type { Project } from "../utils/types";
+
+interface Props {
+    project: Project;
+}
+
+const { project } = Astro.props;
+const { name, technology_used, image } = project;
+---
+
+<a
+    href={`/projects/${name}`}
+    class="flex flex-col z-50 rounded-md bg-white shadow-sm "
+>
+    <div class="max-w-96 min-w-0 hover:scale-105 h-64 shadow-md overflow-hidden rounded-md">
+        <img
+            src={image
+                ? image
+                : "/assets/images/no-picture-available-placeholder-thumbnail.webp"}
+            alt=""
+            class="object-cover h-full w-full rounded-md"
+        />
+    </div>
+
+    <div class="px-2 flex flex-col gap-1 mt-2">
+        <div class="flex flex-col">
+            <h1 class="font-bold text-xl">{name}</h1>
+        </div>
+
+        <div class="flex flex-wrap gap-1 py-2">
+            {
+                technology_used.map((tech) => {
+                    return (
+                        <span class="bg-black text-white  text-xs rounded-full px-3 py-1">
+                            {tech}
+                        </span>
+                    );
+                })
+            }
+        </div>
+    </div>
+</a>

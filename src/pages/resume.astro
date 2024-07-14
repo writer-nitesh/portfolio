@@ -1,0 +1,177 @@
+---
+import Base from "../layout/base.astro";
+import data from "../data/info";
+const {
+    name,
+    description,
+    about,
+    work_experience,
+    skills,
+    social_links,
+    education,
+    projects,
+} = data;
+
+const latestProjects = projects.slice(-Math.min(projects.length, 3));
+---
+
+<Base>
+    <div class="z-50 flex flex-col items-center justify-center py-10">
+        <div class="lg:w-1/2 lg:px-0 px-3 flex flex-col gap-4">
+            <!-- Header -->
+            <div class="flex flex-col gap-2 items-center justify-center w-full">
+                <a
+                    href="/"
+                    class="bg-black rounded-full w-20 h-20 items-center justify-center flex"
+                >
+                    <span class="text-4xl z-50 text-white"
+                        >{name.slice(0, 2)}</span
+                    >
+                </a>
+                <h1 class="text-2xl font-semibold">{name}</h1>
+                <p>{description}</p>
+                <div class="flex gap-4">
+                    {
+                        social_links.map(({ name, url }) => {
+                            return (
+                                <a class="capitalize underline" href={url}>
+                                    {name}
+                                </a>
+                            );
+                        })
+                    }
+                </div>
+                <hr class="bg-gray-300 w-full h-[1.2px]" />
+            </div>
+
+            <!-- Body -->
+
+            <div class="flex flex-col gap-4">
+                <!-- About Section -->
+                <div class="flex flex-col gap-4">
+                    <h2 class="text-xl font-bold uppercase">About</h2>
+                    <p class="leading-7">
+                        {about}
+                    </p>
+                </div>
+
+                <!-- Work Experience  -->
+                {
+                    work_experience && (
+                        <div class="flex flex-col gap-2">
+                            <h2 class="text-xl font-bold uppercase">
+                                Work Experience
+                            </h2>
+                            {work_experience.map((item) => {
+                                return (
+                                    <div class="flex flex-col gap-1 ">
+                                        <div class="flex lg:flex-row flex-col  justify-between">
+                                            <h1 class="font-bold">
+                                                {item.position}
+                                            </h1>
+                                            <span class="text-xs italic text-gray-500">
+                                                {item.start} - {item.end}
+                                            </span>
+                                        </div>
+
+                                        <div class="flex lg:flex-row flex-col  justify-between text-xs text-gray-500">
+                                            <span>{item.company_name}</span>
+                                            <span class="text-xs text-gray-500">
+                                                {item.location}
+                                            </span>
+                                        </div>
+                                        <div>
+                                            <ul>
+                                                {item.description.map(
+                                                    (item) => {
+                                                        return <li> {item}</li>;
+                                                    },
+                                                )}
+                                            </ul>
+                                        </div>
+                                    </div>
+                                );
+                            })}
+                        </div>
+                    )
+                }
+
+                <!-- Skills -->
+                <div class="flex flex-col gap-4">
+                    <h2 class="text-xl font-bold uppercase">Skills</h2>
+                    <div class="flex flex-wrap gap-2 py-2">
+                        {
+                            skills.map((skill) => {
+                                return (
+                                    <span class="bg-black text-white  text-xs rounded-full px-3 py-1">
+                                        {skill}
+                                    </span>
+                                );
+                            })
+                        }
+                    </div>
+                </div>
+
+                <!-- Projects -->
+                <div class="flex flex-col gap-4">
+                    <h2 class="text-xl font-bold uppercase">Projects</h2>
+                    <div class="flex flex-col gap-4">
+                        {
+                            latestProjects.map((item) => {
+                                return (
+                                    <a
+                                        href={item.links.live}
+                                        class="flex flex-col gap-1 "
+                                    >
+                                        <div class="flex lg:flex-row flex-col justify-between">
+                                            <h1 class="font-bold ">
+                                                {item.name}
+                                            </h1>
+                                            <span class="text-xs italic text-gray-500">
+                                                {item.start} - {item.end}
+                                            </span>
+                                        </div>
+
+                                        <div class="flex justify-between text-xs text-gray-500">
+                                            <span>{item.description}</span>
+                                        </div>
+                                    </a>
+                                );
+                            })
+                        }
+                    </div>
+                </div>
+
+                <!-- Education -->
+                <div class="flex flex-col gap-4">
+                    <h2 class="text-xl font-bold uppercase">Education</h2>
+                    <div class="flex flex-col gap-4">
+                        {
+                            education.map((item) => {
+                                return (
+                                    <div class="flex flex-col gap-1 ">
+                                        <div class="flex lg:flex-row flex-col  justify-between">
+                                            <h1 class="font-bold">
+                                                {item.course}
+                                            </h1>
+                                            <span class="text-xs italic text-gray-500">
+                                                {item.start} - {item.end}
+                                            </span>
+                                        </div>
+
+                                        <div class="flex lg:flex-row flex-col  justify-between text-xs text-gray-500">
+                                            <span>{item.institution}</span>
+                                            <span class="text-xs text-gray-500">
+                                                {item.location}
+                                            </span>
+                                        </div>
+                                    </div>
+                                );
+                            })
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</Base>

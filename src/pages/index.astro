@@ -1,33 +1,25 @@
 ---
-import Info from "../data/info";
-import Header from "../components/header.astro";
-import Logo from "../components/logo.astro";
+import Main from "../layout/main.astro";
+import Base from "../layout/base.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="description" content={Info.description} />
-		<meta name="keywords" content="HTML, CSS, JavaScript, Python" />
-		<meta name="author" content={Info.name} />
+<Base>
+	<Main>
+		<div class="h-[85vh] flex flex-col items-center justify-center gap-6">
+			<span class="text-gray-500 lg:text-lg text-xs">Hello World 👋</span>
+			<h2 class="lg:text-6xl text-2xl">
+				I'm
+				<span class="font-bold">Web Developer</span>
+			</h2>
+			<span class="text-gray-500 lg:text-lg text-xs"
+				>Developing real life super power</span
+			>
 
-		<meta property="og:title" content={Info.name} />
-		<meta property="og:type" content="website" />
-		<meta property="og:image" content="/assets/images/ogimage.png" />
-		<meta property="og:url" content={Info.url} />
-
-		<meta property="og:image:width" content="1080" />
-		<meta property="og:image:height" content="1080" />
-
-		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
-		<title>{Info.name}</title>
-	</head>
-	<body>
-		<h1>
-			{Info.description}
-			<Header />
-			<Logo/>
-		</h1>
-	</body>
-</html>
+			<a
+				href="/about"
+				class="absolute lg:bottom-40 bottom-[100px] bg-black text-white rounded-full px-4 py-1"
+				>About Me</a
+			>
+		</div>
+	</Main>
+</Base>
