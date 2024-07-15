@@ -1,10 +1,12 @@
 ---
 import Header from "../components/header.astro";
 import Footer from "../components/footer.astro";
+import Social from "../components/social.astro";
 ---
 
-<div class="flex flex-col justify-center items-center w-full ">
+<div class="flex flex-col justify-center items-center w-full">
+    <Social />
     <Header />
-        <slot />
+    <slot />
     <Footer />
 </div>

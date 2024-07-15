@@ -17,6 +17,7 @@ const projects: Array<Project> = [
             "Tailwind",
             "Typescript"
         ],
+        image: "/assets/images/preview.png"
 
     },
     {

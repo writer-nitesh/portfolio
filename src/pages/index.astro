@@ -1,13 +1,17 @@
 ---
 import Main from "../layout/main.astro";
 import Base from "../layout/base.astro";
+import Meta from "../components/meta.astro";
 ---
 
 <Base>
+	<slot slot="head">
+		<Meta />
+	</slot>
 	<Main>
-		<div class="h-[85vh] flex flex-col items-center justify-center gap-6">
+		<div class="h-[88vh] flex flex-col items-center justify-center gap-6">
 			<span class="text-gray-500 lg:text-lg text-xs">Hello World 👋</span>
-			<h2 class="lg:text-6xl text-2xl">
+			<h2 class="lg:text-6xl text-3xl">
 				I'm
 				<span class="font-bold">Web Developer</span>
 			</h2>

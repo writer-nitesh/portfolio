@@ -15,7 +15,7 @@ const info: Info = {
     work_experience: [
         {
             company_name: "RFM360",
-            description: ["sada", "wa"],
+            description: ["Worked on the Workspace app using Django, HTML, CSS, and JavaScript. Users will be able to create their own workspaces and use only those apps that are assigned to them in that particular space.", "I also worked on the finance app of the project and built a feature that lets users view and create s invoices.", "Worked with Git and GitHub for collaboration with other developers."],
             start: "May 2022",
             end: "December 2022",
             location: "remote",
@@ -47,22 +47,24 @@ const info: Info = {
             location: "Haldwani, Uttarakhand"
         }
     ],
-    social_links: [
-        {
-            name: "Github",
-            url: "https://github.com/niteshsingh2001"
-        },
-        {
-            name: "E-mail",
-            url: "singhnitesh.2001@outlook.com"
-        },
-        {
-            name: "LinkedIn",
-            url: "https://www.linkedin.com/in/nitesh-singh-641769209/"
-        }
-    ],
+    social_links: {
+        github: "https://github.com/writer-nitesh",
+        linkedin: "https://www.linkedin.com/in/nitesh-singh-641769209/",
+        email: "singhnitesh.2001@outlook.com",
+    },
     certifications: [
-        "Python for beginners"
+        {
+            link: "https://drive.google.com/file/d/11mY6EPsHumObNIF5BvoU-1eayUTOR8PN/view?usp=sharing",
+            name: "Machine Learning and its applications in Information Security, Computer Vision and Natural Language"
+        },
+        {
+            link: "https://drive.google.com/file/d/1GQH94kVG1IjwVdk1SMGkWoWKwhjgZS7Z/view?usp=sharing",
+            name: "Cloud Practitioner Essential"
+        },
+        {
+            link: "https://www.udemy.com/certificate/UC-9c01ddc5-1abb-4f1a-af9a-0a48d4e123ce/",
+            name: "Complete React Developer (w/ Redux, Hooks, GraphQL)"
+        }
     ],
     projects: projects,
     skills: ["HTML", "CSS", "JavaScript", "Python", "PHP", "ReactJS", "NextJS", "NodeJS", "Django", "Git/Github", "Redux Toolkit", "MySQL", "MongoDB"]

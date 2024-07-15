@@ -11,9 +11,11 @@ const { name, technology_used, image } = project;
 
 <a
     href={`/projects/${name}`}
-    class="flex flex-col z-50 rounded-md bg-white shadow-sm "
+    class="flex flex-col z-50 rounded-md bg-white shadow-sm w-fit"
 >
-    <div class="max-w-96 min-w-0 hover:scale-105 h-64 shadow-md overflow-hidden rounded-md">
+    <div
+        class="max-w-[350px] min-w-[0px] hover:scale-105 h-64 shadow-md overflow-hidden rounded-md"
+    >
         <img
             src={image
                 ? image

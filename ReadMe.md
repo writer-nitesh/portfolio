@@ -2,7 +2,7 @@
 
 # Todo
 
-- Add social Icons
-- improve resume
-- finishing touch
 - add AI
+- add more info
+- sitemap and robots.txt
+- depoly

@@ -3,10 +3,14 @@ import Main from "../layout/main.astro";
 import Base from "../layout/base.astro";
 import Card from "../components/card.astro";
 import data from "../data/info";
+import Meta from "../components/meta.astro";
 const { projects } = data;
 ---
 
 <Base>
+    <slot slot="head">
+        <Meta currentPage="Projects" />
+    </slot>
     <Main>
         <div class="w-[80%] py-5 gap-4 flex flex-col">
             <h1 class="text-2xl font-bold">Projects</h1>

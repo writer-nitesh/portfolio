@@ -1,12 +1,16 @@
 ---
 import Main from "../layout/main.astro";
 import Base from "../layout/base.astro";
+import Meta from "../components/meta.astro";
 ---
 
 <Base>
+    <slot slot="head">
+        <Meta currentPage="About" />
+    </slot>
     <Main>
         <div
-            class=" lg:w-1/2 lg:px-0 px-4 flex flex-col items-start justify-start gap-6 py-8"
+            class="lg:w-1/2 lg:px-0 px-4 flex flex-col items-start justify-start gap-6 py-8"
         >
             <h1 class="text-xl font-bold">About Me</h1>
 
@@ -48,7 +52,9 @@ import Base from "../layout/base.astro";
                     specific requirements of the management team.
                 </p>
             </section>
-            <a href="/projects" class="bg-black text-white rounded-full px-4 py-1"
+            <a
+                href="/projects"
+                class="bg-black text-white rounded-full px-4 py-1"
                 >Check out my work!</a
             >
         </div>

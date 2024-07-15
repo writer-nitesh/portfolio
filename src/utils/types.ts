@@ -1,7 +1,10 @@
 
 export interface SocialLink {
-    name: string
-    url: string
+    instagram?: string
+    linkedin?: string
+    github?: string
+    email?: string
+    twitter?: string
 }
 
 export interface Project {
@@ -59,7 +62,7 @@ export interface Info {
     work_experience?: Array<Experience>
     education: Array<Studies>
     projects: Array<Project>
-    social_links: Array<SocialLink>
-    certifications: Array<string>
+    social_links: SocialLink
+    certifications: Array<Certificate>
     skills: Array<string>
 }

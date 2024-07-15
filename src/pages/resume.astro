@@ -10,12 +10,18 @@ const {
     social_links,
     education,
     projects,
+    certifications,
 } = data;
 
 const latestProjects = projects.slice(-Math.min(projects.length, 3));
+import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
+import Meta from "../components/meta.astro";
 ---
 
 <Base>
+    <slot name="head">
+        <Meta currentPage={"Resume"} />
+    </slot>
     <div class="z-50 flex flex-col items-center justify-center py-10">
         <div class="lg:w-1/2 lg:px-0 px-3 flex flex-col gap-4">
             <!-- Header -->
@@ -30,15 +36,48 @@ const latestProjects = projects.slice(-Math.min(projects.length, 3));
                 </a>
                 <h1 class="text-2xl font-semibold">{name}</h1>
                 <p>{description}</p>
+
+                <!-- Social Links -->
                 <div class="flex gap-4">
                     {
-                        social_links.map(({ name, url }) => {
-                            return (
-                                <a class="capitalize underline" href={url}>
-                                    {name}
-                                </a>
-                            );
-                        })
+                        social_links.github && (
+                            <a
+                                class="capitalize  flex gap-1 justify-center items-center"
+                                href={social_links.github}
+                                target="_blank"
+                            >
+                                <>
+                                    <FaGithub size={20} />
+                                    <span>Github</span>
+                                </>
+                            </a>
+                        )
+                    }
+                    {
+                        social_links.linkedin && (
+                            <a
+                                class="capitalize  flex gap-1 justify-center items-center"
+                                href={social_links.linkedin}
+                                target="_blank"
+                            >
+                                <>
+                                    <FaLinkedin size={20} />
+                                    <span>Linkedin</span>
+                                </>
+                            </a>
+                        )
+                    }
+                    {
+                        social_links.email && (
+                            <a
+                                class="capitalize  flex gap-1 justify-center items-center"
+                                href={social_links.email}
+                                target="_blank"
+                            >
+                                <FaEnvelope size={19} />
+                                <span>E-mail</span>
+                            </a>
+                        )
                     }
                 </div>
                 <hr class="bg-gray-300 w-full h-[1.2px]" />
@@ -49,7 +88,12 @@ const latestProjects = projects.slice(-Math.min(projects.length, 3));
             <div class="flex flex-col gap-4">
                 <!-- About Section -->
                 <div class="flex flex-col gap-4">
-                    <h2 class="text-xl font-bold uppercase">About</h2>
+                    <h2
+                        class="text-xl font-bold uppercase w-fit py-1 border-black border-b-2"
+                    >
+                        About
+                    </h2>
+
                     <p class="leading-7">
                         {about}
                     </p>
@@ -58,8 +102,8 @@ const latestProjects = projects.slice(-Math.min(projects.length, 3));
                 <!-- Work Experience  -->
                 {
                     work_experience && (
-                        <div class="flex flex-col gap-2">
-                            <h2 class="text-xl font-bold uppercase">
+                        <div class="flex flex-col gap-4 ">
+                            <h2 class="text-xl font-bold uppercase w-fit py-1 border-black border-b-2">
                                 Work Experience
                             </h2>
                             {work_experience.map((item) => {
@@ -76,15 +120,19 @@ const latestProjects = projects.slice(-Math.min(projects.length, 3));
 
                                         <div class="flex lg:flex-row flex-col  justify-between text-xs text-gray-500">
                                             <span>{item.company_name}</span>
-                                            <span class="text-xs text-gray-500">
+                                            <span class="text-xs text-gray-500 capitalize">
                                                 {item.location}
                                             </span>
                                         </div>
                                         <div>
-                                            <ul>
+                                            <ul class="flex flex-col gap-2 mt-1">
                                                 {item.description.map(
                                                     (item) => {
-                                                        return <li> {item}</li>;
+                                                        return (
+                                                            <li class="leading-5 text-xs">
+                                                                {item}
+                                                            </li>
+                                                        );
                                                     },
                                                 )}
                                             </ul>
@@ -98,7 +146,11 @@ const latestProjects = projects.slice(-Math.min(projects.length, 3));
 
                 <!-- Skills -->
                 <div class="flex flex-col gap-4">
-                    <h2 class="text-xl font-bold uppercase">Skills</h2>
+                    <h2
+                        class="text-xl font-bold uppercase w-fit py-1 border-black border-b-2"
+                    >
+                        Skills
+                    </h2>
                     <div class="flex flex-wrap gap-2 py-2">
                         {
                             skills.map((skill) => {
@@ -114,7 +166,11 @@ const latestProjects = projects.slice(-Math.min(projects.length, 3));
 
                 <!-- Projects -->
                 <div class="flex flex-col gap-4">
-                    <h2 class="text-xl font-bold uppercase">Projects</h2>
+                    <h2
+                        class="text-xl font-bold uppercase w-fit py-1 border-black border-b-2"
+                    >
+                        Projects
+                    </h2>
                     <div class="flex flex-col gap-4">
                         {
                             latestProjects.map((item) => {
@@ -122,6 +178,7 @@ const latestProjects = projects.slice(-Math.min(projects.length, 3));
                                     <a
                                         href={item.links.live}
                                         class="flex flex-col gap-1 "
+                                        target="_blank"
                                     >
                                         <div class="flex lg:flex-row flex-col justify-between">
                                             <h1 class="font-bold ">
@@ -132,8 +189,14 @@ const latestProjects = projects.slice(-Math.min(projects.length, 3));
                                             </span>
                                         </div>
 
-                                        <div class="flex justify-between text-xs text-gray-500">
-                                            <span>{item.description}</span>
+                                        <div class="flex justify-between text-xs text-gray-500 leading-5">
+                                            <ul class="flex flex-col gap-0.5 mt-0.5">
+                                                {item.description.map(
+                                                    (item) => {
+                                                        return <li>{item}</li>;
+                                                    },
+                                                )}
+                                            </ul>
                                         </div>
                                     </a>
                                 );
@@ -144,7 +207,11 @@ const latestProjects = projects.slice(-Math.min(projects.length, 3));
 
                 <!-- Education -->
                 <div class="flex flex-col gap-4">
-                    <h2 class="text-xl font-bold uppercase">Education</h2>
+                    <h2
+                        class="text-xl font-bold uppercase w-fit py-1 border-black border-b-2"
+                    >
+                        Education
+                    </h2>
                     <div class="flex flex-col gap-4">
                         {
                             education.map((item) => {
@@ -161,7 +228,7 @@ const latestProjects = projects.slice(-Math.min(projects.length, 3));
 
                                         <div class="flex lg:flex-row flex-col  justify-between text-xs text-gray-500">
                                             <span>{item.institution}</span>
-                                            <span class="text-xs text-gray-500">
+                                            <span class="text-xs text-gray-500 capitalize">
                                                 {item.location}
                                             </span>
                                         </div>
@@ -172,6 +239,25 @@ const latestProjects = projects.slice(-Math.min(projects.length, 3));
                     </div>
                 </div>
             </div>
+            <!-- Certificates -->
+            <div class="flex flex-col gap-4">
+                <h2
+                    class="text-xl font-bold uppercase w-fit py-1 border-black border-b-2"
+                >
+                    Certificates
+                </h2>
+                <div class="flex flex-col gap-4">
+                    {
+                        certifications.map(({ name, link }) => {
+                            return (
+                                <a target="_blank" href={link}>
+                                    {name}
+                                </a>
+                            );
+                        })
+                    }
+                </div>
+            </div>
         </div>
-    </div>
-</Base>
+    </div></Base
+>
