@@ -5,7 +5,7 @@ const info: Info = {
     name: "Nitesh Singh",
     gender: "Male",
     description: "Developing real life super power",
-    url: "ni30.vercel.app",
+    url: "https://ni30.vercel.app/",
     profile_image: "/assets/images/profile.jpg",
     location: {
         city: "Haldwani",
