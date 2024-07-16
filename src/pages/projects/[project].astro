@@ -26,6 +26,7 @@ const { name, description, end, image, links, start, technology_used } =
     project;
 import { TiChevronLeft } from "react-icons/ti";
 import Meta from "../../components/meta.astro";
+import { Image } from "astro:assets";
 ---
 
 <Base>
@@ -57,7 +58,7 @@ import Meta from "../../components/meta.astro";
                             )
                         }
                         {
-                            links.live && (
+                            links.source && (
                                 <a
                                     target="_blank"
                                     class="underline"
@@ -68,16 +69,19 @@ import Meta from "../../components/meta.astro";
                             )
                         }
                     </div>
-                    <span>{start} - {end}</span>
+                    <span>Last Modified: {end}</span>
                 </div>
             </div>
 
             <div class="w-full shadow-md overflow-hidden rounded-md">
-                <img
+                <Image
                     src={image
                         ? image
                         : "/assets/images/no-picture-available-placeholder-thumbnail.webp"}
-                    alt=""
+                    alt={name}
+                    width={100}
+                    height={100}
+                    loading="eager"
                     class="object-cover h-full w-full rounded-md"
                 />
             </div>

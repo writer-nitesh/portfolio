@@ -7,11 +7,11 @@ const projects: Array<Project> = [
             "This my personal portfolio website for showcasing projects and my website where people reach me out."
         ],
         links: {
-            live: "t",
+            live: "https://ni30.vercel.app/",
             source: "https://github.com/writer-nitesh/portfolio"
         },
         start: "September 2022",
-        end: "Present",
+        end: "July 2024",
         technology_used: [
             "Astro JS",
             "Tailwind",
@@ -23,14 +23,15 @@ const projects: Array<Project> = [
     {
         name: "WhatsApp Clone",
         description: [
-
+            "Make realistic-looking WhatsApp chat conversations. Choose contacts, avatars, and timestamps to make your memes ultra-believable",
+            "Fun meme generator inspired by WhatsApp's chat interface memes."
         ],
         links: {
             live: "https://whatsappclone-9r7.pages.dev/",
             source: "https://github.com/writer-nitesh/whatsappClone"
         },
-        start: "September 2022",
-        end: "Present",
+        start: "April 2024",
+        end: "April 2024",
         technology_used: [
             "React JS",
             "Tailwind",
@@ -40,17 +41,18 @@ const projects: Array<Project> = [
         image: "https://github.com/writer-nitesh/whatsappClone/raw/master/screenshot.png"
     },
     {
-        name: "Groww Clone Shrinkk",
+        name: "Shrinkk: Built for shrinkking Patience",
         description: [
-            "Built for shrinkking Patience",
-            "Shinkk is a stock market website which not works on real data."
+            "Shinkk: A Simulated Stock Market",
+            "Shinkk generates realistic-looking market data that fluctuates over time, mimicking the dynamic nature of real stock markets.",
+            "Track the simulated market trends through charts that visually represent price movements"
         ],
         links: {
             live: "https://whatsappclone-9r7.pages.dev/",
             source: "https://github.com/writer-nitesh/shrink"
         },
-        start: "September 2022",
-        end: "Present",
+        start: "March 2024",
+        end: "April 2024",
         technology_used: [
             "Next JS",
             "MDX",
@@ -81,7 +83,8 @@ const projects: Array<Project> = [
     {
         name: "freeMusic4All",
         description: [
-            ""
+            "A music web app to listern ads free music",
+            "Easily Download Music on the go"
         ],
         links: {
             source: "https://github.com/writer-nitesh/freeMusic4All"

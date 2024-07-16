@@ -12,21 +12,21 @@ import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 
     {
         social_links.github && (
-            <a target="_blank" href={social_links.github}>
+            <a target="_blank" href={social_links.github} aria-label="github">
                 <FaGithub size={20} />
             </a>
         )
     }
     {
         social_links.linkedin && (
-            <a target="_blank" href={social_links.linkedin}>
+            <a target="_blank" href={social_links.linkedin} aria-label="linkedin">
                 <FaLinkedin size={20} />
             </a>
         )
     }
     {
         social_links.email && (
-            <a target="_blank" href={social_links.email}>
+            <a target="_blank" href={social_links.email} aria-label="email">
                 <FaEnvelope size={19} />
             </a>
         )

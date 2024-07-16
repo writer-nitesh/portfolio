@@ -5,7 +5,7 @@ const info: Info = {
     name: "Nitesh Singh",
     gender: "Male",
     description: "Developing real life super power",
-    url: "https://nitesh-singh.vercel.app/",
+    url: "ni30.vercel.app",
     profile_image: "/assets/images/profile.jpg",
     location: {
         city: "Haldwani",
@@ -20,7 +20,7 @@ const info: Info = {
             end: "December 2022",
             location: "remote",
             position: "Python Developer",
-            skills: ["Django"]
+            skills: ["Django", "HTML", "CSS", "JS"]
         }
     ],
     about: "Hi there! I'm Nitesh Singh, a full-stack developer who specializes in transforming bugs into features. With a robust expertise in front-end and back-end development, my goal is to craft seamless digital experiences that go beyond just functioning on my own computer.",

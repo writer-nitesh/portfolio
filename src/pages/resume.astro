@@ -45,6 +45,7 @@ import Meta from "../components/meta.astro";
                                 class="capitalize  flex gap-1 justify-center items-center"
                                 href={social_links.github}
                                 target="_blank"
+                                aria-label="github"
                             >
                                 <>
                                     <FaGithub size={20} />
@@ -59,6 +60,7 @@ import Meta from "../components/meta.astro";
                                 class="capitalize  flex gap-1 justify-center items-center"
                                 href={social_links.linkedin}
                                 target="_blank"
+                                aria-label="linkedin"
                             >
                                 <>
                                     <FaLinkedin size={20} />
@@ -73,6 +75,7 @@ import Meta from "../components/meta.astro";
                                 class="capitalize  flex gap-1 justify-center items-center"
                                 href={social_links.email}
                                 target="_blank"
+                                aria-label="email"
                             >
                                 <FaEnvelope size={19} />
                                 <span>E-mail</span>
@@ -177,8 +180,9 @@ import Meta from "../components/meta.astro";
                                 return (
                                     <a
                                         href={item.links.live}
-                                        class="flex flex-col gap-1 "
+                                        class="flex flex-col gap-1"
                                         target="_blank"
+                                        aria-label={item.name}
                                     >
                                         <div class="flex lg:flex-row flex-col justify-between">
                                             <h1 class="font-bold ">
@@ -250,7 +254,11 @@ import Meta from "../components/meta.astro";
                     {
                         certifications.map(({ name, link }) => {
                             return (
-                                <a target="_blank" href={link}>
+                                <a
+                                    target="_blank"
+                                    href={link}
+                                    aria-label={name}
+                                >
                                     {name}
                                 </a>
                             );
