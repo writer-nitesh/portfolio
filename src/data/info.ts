@@ -15,7 +15,13 @@ const info: Info = {
     work_experience: [
         {
             company_name: "RFM360",
-            description: ["Worked on the Workspace app using Django, HTML, CSS, and JavaScript. Users will be able to create their own workspaces and use only those apps that are assigned to them in that particular space.", "I also worked on the finance app of the project and built a feature that lets users view and create s invoices.", "Worked with Git and GitHub for collaboration with other developers."],
+            description: [
+                "Managed daily tasks and project targets, ensuring timely delivery and effective collaboration.",
+                "Developed and integrated a workspace section using Django, HTML, CSS, and JavaScript, enabling user collaboration with role-based permissions.",
+                " Created a finance module for invoice generation and viewing, streamlining financial operations.",
+                "Deployed the project on AWS EC2, configured Nginx, and linked the domain for seamless access, enhancing overall user experience.",
+
+            ],
             start: "May 2022",
             end: "December 2022",
             location: "remote",
@@ -23,7 +29,7 @@ const info: Info = {
             skills: ["Django", "HTML", "CSS", "JS"]
         }
     ],
-    about: "Hi there! I'm Nitesh Singh, a full-stack developer who specializes in transforming bugs into features. With a robust expertise in front-end and back-end development, my goal is to craft seamless digital experiences that go beyond just functioning on my own computer.",
+    about: "Highly motivated Computer Applications student with a strong foundation in web technology and a passion for leveraging the web to drive impactful changes. Skilled in Python, JavaScript, and various web development frameworks. Seeking opportunities to contribute and grow in a dynamic tech environment.",
     education: [
         {
             course: "Bachelor of Computer Applications",
