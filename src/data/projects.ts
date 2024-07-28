@@ -40,6 +40,7 @@ const projects: Array<Project> = [
         ],
         image: "https://github.com/writer-nitesh/whatsappClone/raw/master/screenshot.png"
     },
+
     {
         name: "Shrinkk: Built for shrinkking Patience",
         description: [
@@ -63,6 +64,23 @@ const projects: Array<Project> = [
         image: "https://github.com/writer-nitesh/shrink/blob/master/src/assets/images/explore.png?raw=true"
     },
     {
+        name: "Reactive",
+        description: [
+            "React Component Learning Project"
+        ],
+        links: {
+            live: "https://re-active.pages.dev/",
+            source: "https://github.com/writer-nitesh/re_active"
+        },
+        start: "March 2024",
+        end: "April 2024",
+        technology_used: [
+            "React JS",
+            "Tailwind",
+            "Typescript",
+        ],
+    },
+    {
         name: "The Code Report",
         description: [
             "Most awaited developer newsletter."
@@ -81,12 +99,13 @@ const projects: Array<Project> = [
         image: "https://github.com/writer-nitesh/thecodereport/raw/main/public/images/the_code_report.png"
     },
     {
-        name: "freeMusic4All",
+        name: "freeMusic4All (Under Development)",
         description: [
             "A music web app to listern ads free music",
             "Easily Download Music on the go"
         ],
         links: {
+            live: "https://freemusic4all.pages.dev/",
             source: "https://github.com/writer-nitesh/freeMusic4All"
         },
         start: "Mar 2023",

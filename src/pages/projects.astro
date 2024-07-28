@@ -12,14 +12,20 @@ const { projects } = data;
         <Meta currentPage="Projects" />
     </slot>
     <Main>
-        <div class="w-[80%] py-5 gap-4 flex flex-col">
-            <h1 class="text-2xl font-bold">Projects</h1>
-            <div class="flex gap-8 items-center px-0 justify-start flex-wrap">
-                {
-                    projects.map((project) => {
-                        return <Card project={project} />;
-                    })
-                }
+        <div class="w-[80%] py-5 gap-8 flex flex-col items-center">
+            <h1 class="text-2xl font-bold w-full">Projects</h1>
+            <div
+                class="grid lg:grid-cols-3 xl:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-y-10 gap-x-10 w-full"
+            >
+                <!-- <div
+                    class="flex gap-8 items-center px-0 justify-start flex-wrap"
+                > -->
+                    {
+                        projects.map((project) => {
+                            return <Card project={project} />;
+                        })
+                    }
+                </div>
             </div>
         </div>
     </Main>
