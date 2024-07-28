@@ -21,7 +21,7 @@ const projects: Array<Project> = [
 
     },
     {
-        name: "WhatsApp Clone",
+        name: "WhatsApp Clone (Meme Creator)",
         description: [
             "Make realistic-looking WhatsApp chat conversations. Choose contacts, avatars, and timestamps to make your memes ultra-believable",
             "Fun meme generator inspired by WhatsApp's chat interface memes."
@@ -40,11 +40,11 @@ const projects: Array<Project> = [
         ],
         image: "https://github.com/writer-nitesh/whatsappClone/raw/master/screenshot.png"
     },
-
     {
-        name: "Shrinkk: Built for shrinkking Patience",
+        name: "Shrinkk",
         description: [
             "Shinkk: A Simulated Stock Market",
+            "Tagline: Built for shrinkking Patience",
             "Shinkk generates realistic-looking market data that fluctuates over time, mimicking the dynamic nature of real stock markets.",
             "Track the simulated market trends through charts that visually represent price movements"
         ],

@@ -185,7 +185,7 @@ import Meta from "../components/meta.astro";
                                         aria-label={item.name}
                                     >
                                         <div class="flex lg:flex-row flex-col justify-between">
-                                            <h1 class="font-bold ">
+                                            <h1 class="font-bold  hover:underline  underline-offset-2">
                                                 {item.name}
                                             </h1>
                                             <span class="text-xs italic text-gray-500">
@@ -258,6 +258,7 @@ import Meta from "../components/meta.astro";
                                     target="_blank"
                                     href={link}
                                     aria-label={name}
+                                    class="hover:underline  underline-offset-2"
                                 >
                                     {name}
                                 </a>
@@ -267,5 +268,5 @@ import Meta from "../components/meta.astro";
                 </div>
             </div>
         </div>
-    </div></Base
->
+    </div>
+</Base>
