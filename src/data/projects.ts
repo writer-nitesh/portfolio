@@ -2,23 +2,42 @@ import type { Project } from "../utils/types"
 
 const projects: Array<Project> = [
     {
-        name: "Personal portfolio website",
+        name: "freeMusic4All",
         description: [
-            "This my personal portfolio website for showcasing projects and my website where people reach me out."
+            "A music web app to listern ads free music",
+            "Easily Download Music on the go"
         ],
         links: {
-            live: "https://ni30.vercel.app/",
-            source: "https://github.com/writer-nitesh/portfolio"
+            live: "https://freemusic4all.pages.dev/",
+            source: "https://github.com/writer-nitesh/freeMusic4All"
         },
-        start: "September 2022",
-        end: "July 2024",
+        start: "Mar 2023",
+        end: "Present",
+        technology_used: [
+            "React JS",
+            "Tailwind",
+            "Typescript",
+        ],
+        image: "https://github.com/writer-nitesh/freeMusic4All/blob/main/src/assets/images/freeMusic4All_screenshot.png?raw=true"
+    },
+    {
+        name: "Pavitra Pheres",
+        description: [
+            "Crafting Timeless Memories Amidst Himalayan Serenity.",
+            "Discover your dream wedding in Uttarakhand with Pavitra Pheres your ultimate guide to destination weddings amidst the Himalayas. Create lasting memories with our curated resources."
+        ],
+        links: {
+            live: "https://pavitra-pheres.pages.dev/",
+            source: "https://github.com/writer-nitesh/pavitra_pheres"
+        },
+        start: "May 2024",
+        end: "Sep 2024",
         technology_used: [
             "Astro JS",
             "Tailwind",
-            "Typescript"
+            "Typescript",
         ],
-        image: "/assets/images/preview.png"
-
+        image: "https://github.com/writer-nitesh/pavitra_pheres/raw/master/public/screenshots/ss2.png"
     },
     {
         name: "WhatsApp Clone (Meme Creator)",
@@ -99,23 +118,24 @@ const projects: Array<Project> = [
         image: "https://github.com/writer-nitesh/thecodereport/raw/main/public/images/the_code_report.png"
     },
     {
-        name: "freeMusic4All (Under Development)",
+        name: "Personal portfolio website",
         description: [
-            "A music web app to listern ads free music",
-            "Easily Download Music on the go"
+            "This my personal portfolio website for showcasing projects and my website where people reach me out."
         ],
         links: {
-            live: "https://freemusic4all.pages.dev/",
-            source: "https://github.com/writer-nitesh/freeMusic4All"
+            live: "https://ni30.vercel.app/",
+            source: "https://github.com/writer-nitesh/portfolio"
         },
-        start: "Mar 2023",
-        end: "Present",
+        start: "September 2022",
+        end: "July 2024",
         technology_used: [
-            "React JS",
+            "Astro JS",
             "Tailwind",
-            "Typescript",
+            "Typescript"
         ],
-    }
+        image: "/assets/images/preview.png"
+
+    },
 
 ]
 
