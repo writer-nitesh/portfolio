@@ -23,7 +23,7 @@ const projects: Array<Project> = [
     {
         name: "Pavitra Pheres",
         description: [
-            "Crafting Timeless Memories Amidst Himalayan Serenity.",
+            "A Blog Website for showcasing uttrakhand culture",
             "Discover your dream wedding in Uttarakhand with Pavitra Pheres your ultimate guide to destination weddings amidst the Himalayas. Create lasting memories with our curated resources."
         ],
         links: {
@@ -38,6 +38,23 @@ const projects: Array<Project> = [
             "Typescript",
         ],
         image: "https://github.com/writer-nitesh/pavitra_pheres/raw/master/public/screenshots/ss2.png"
+    },
+
+    {
+        name: "Tipsy Text",
+        description: [
+            "A client project"
+        ],
+        links: {
+            live: "https://tipsytext-web.pages.dev/",
+        },
+        start: "",
+        end: "",
+        technology_used: [
+            "React JS",
+            "Tailwind CSS",
+        ],
+        image: "/assets/images/tipsy_text.png"
     },
     {
         name: "WhatsApp Clone (Meme Creator)",
@@ -60,6 +77,26 @@ const projects: Array<Project> = [
         image: "https://github.com/writer-nitesh/whatsappClone/raw/master/screenshot.png"
     },
     {
+        name: "Ecom",
+        description: [
+            "ECOM is an e-commerce shopping website built with nextjs"
+        ],
+        links: {
+            live: "http://ecom-0x99f.vercel.app",
+            source: "https://github.com/writer-nitesh/ecom"
+        },
+        start: "August 2024",
+        end: "August 2024",
+        technology_used: [
+            "Next JS",
+            "Tailwind CSS",
+            "Typescript",
+            "Fake Store API",
+            "Zustand"
+        ],
+        image: "https://raw.githubusercontent.com/writer-nitesh/ecom/refs/heads/master/images/ecom_4.png"
+    },
+    {
         name: "Shrinkk",
         description: [
             "Shinkk: A Simulated Stock Market",
@@ -68,7 +105,7 @@ const projects: Array<Project> = [
             "Track the simulated market trends through charts that visually represent price movements"
         ],
         links: {
-            live: "https://whatsappclone-9r7.pages.dev/",
+            live: "https://shrinkk-six.vercel.app/",
             source: "https://github.com/writer-nitesh/shrink"
         },
         start: "March 2024",

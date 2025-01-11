@@ -14,6 +14,18 @@ const info: Info = {
     },
     work_experience: [
         {
+            company_name: "Raasta Research and Development",
+            description: [
+                    "Developing website",
+                    "Working on Data Extraction"
+            ],
+            start: "September 2024",
+            end: "Present",
+            location: "Haldwani",
+            position: "Software Developer",
+            skills: ["NextJS", "Python", "CSS", "JS"]
+        },
+        {
             company_name: "RFM360",
             description: [
                 "Managed daily tasks and project targets, ensuring timely delivery and effective collaboration.",
@@ -73,7 +85,7 @@ const info: Info = {
         }
     ],
     projects: projects,
-    skills: ["HTML", "CSS", "JavaScript", "Python", "PHP", "ReactJS", "NextJS", "NodeJS", "Django", "Git/Github", "Redux Toolkit", "MySQL", "MongoDB"]
+    skills: ["HTML", "CSS", "JavaScript", "Python", "PHP", "ReactJS", "NextJS", "NodeJS", "Django", "Git/Github", "Redux Toolkit", "MySQL", "MongoDB","Docker","SQL"]
 }
 
 export default info

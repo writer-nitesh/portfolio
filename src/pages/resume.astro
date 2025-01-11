@@ -13,7 +13,8 @@ const {
     certifications,
 } = data;
 
-const latestProjects = projects.slice(-Math.min(projects.length, 3));
+const latestProjects = projects.slice(0,4);
+
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 import Meta from "../components/meta.astro";
 ---
