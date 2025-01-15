@@ -4,8 +4,8 @@ const projects: Array<Project> = [
     {
         name: "freeMusic4All",
         description: [
-            "A music web app to listern ads free music",
-            "Easily Download Music on the go"
+            "A web app for listening to ad-free music and downloading tracks effortlessly, even on the go.",
+            "Inspired by a real-life experience of losing internet connectivity while traveling on a college bus, leading to the discovery of a music API and the development of an intuitive UI to address this need."
         ],
         links: {
             live: "https://freemusic4all.pages.dev/",
@@ -23,8 +23,10 @@ const projects: Array<Project> = [
     {
         name: "Pavitra Pheres",
         description: [
-            "A Blog Website for showcasing uttrakhand culture",
-            "Discover your dream wedding in Uttarakhand with Pavitra Pheres your ultimate guide to destination weddings amidst the Himalayas. Create lasting memories with our curated resources."
+            "A blog website dedicated to showcasing the rich culture of Uttarakhand, with a focus on promoting destination weddings amidst the Himalayas.",
+            "Built to explore the development of an SEO-friendly, high-performance blog without relying on WordPress, ensuring cost-efficiency.",
+            "Integrated Open Graph metadata for enhanced preview functionality when shared on social media.",
+            "Designed to provide curated resources and inspiration for creating unforgettable memories in the heart of Uttarakhand."
         ],
         links: {
             live: "https://pavitra-pheres.pages.dev/",
@@ -38,23 +40,6 @@ const projects: Array<Project> = [
             "Typescript",
         ],
         image: "https://github.com/writer-nitesh/pavitra_pheres/raw/master/public/screenshots/ss2.png"
-    },
-
-    {
-        name: "Tipsy Text",
-        description: [
-            "A client project"
-        ],
-        links: {
-            live: "https://tipsytext-web.pages.dev/",
-        },
-        start: "",
-        end: "",
-        technology_used: [
-            "React JS",
-            "Tailwind CSS",
-        ],
-        image: "/assets/images/tipsy_text.png"
     },
     {
         name: "WhatsApp Clone (Meme Creator)",
@@ -118,6 +103,22 @@ const projects: Array<Project> = [
             "Chart JS"
         ],
         image: "https://github.com/writer-nitesh/shrink/blob/master/src/assets/images/explore.png?raw=true"
+    },
+    {
+        name: "Tipsy Text",
+        description: [
+            "A client project"
+        ],
+        links: {
+            live: "https://tipsytext-web.pages.dev/",
+        },
+        start: "",
+        end: "",
+        technology_used: [
+            "React JS",
+            "Tailwind CSS",
+        ],
+        image: "/assets/images/tipsy_text.png"
     },
     {
         name: "Reactive",

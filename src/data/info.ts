@@ -16,15 +16,15 @@ const info: Info = {
         {
             company_name: "Raasta Research and Development",
             description: [
-                    "Developing website",
-                    "Working on Data Extraction"
+                "Leading the development of their official website to enhance online presence and user experience.",
+                "Implementing data extraction solutions for biodiversity research and sustainable development initiatives."
             ],
             start: "September 2024",
             end: "Present",
             location: "Haldwani",
             position: "Software Developer",
-            skills: ["NextJS", "Python", "CSS", "JS"]
-        },
+            skills: ["Next.js", "Python", "CSS", "JavaScript", "React.js", "TypeScript", "Tailwind CSS", "SQL", "PostgreSQL", "Prisma", "Data Analysis", "APIs", "Git", "Framer Motion"]
+        },        
         {
             company_name: "RFM360",
             description: [
@@ -72,7 +72,7 @@ const info: Info = {
     },
     certifications: [
         {
-            link: "https://drive.google.com/file/d/11mY6EPsHumObNIF5BvoU-1eayUTOR8PN/view?usp=sharing",
+            link: "https://drive.g  oogle.com/file/d/11mY6EPsHumObNIF5BvoU-1eayUTOR8PN/view?usp=sharing",
             name: "Machine Learning and its applications in Information Security, Computer Vision and Natural Language"
         },
         {
@@ -85,7 +85,7 @@ const info: Info = {
         }
     ],
     projects: projects,
-    skills: ["HTML", "CSS", "JavaScript", "Python", "PHP", "ReactJS", "NextJS", "NodeJS", "Django", "Git/Github", "Redux Toolkit", "MySQL", "MongoDB","Docker","SQL"]
+    skills: ["HTML", "CSS", "JavaScript", "Python", "PHP", "ReactJS", "NextJS", "NodeJS", "Django", "Git/Github", "Redux Toolkit", "MySQL", "MongoDB", "Docker", "SQL"]
 }
 
 export default info
