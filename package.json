@@ -1,28 +1,27 @@
 {
-  "name": "pink-planet",
+  "name": "portfolio",
+  "private": true,
   "type": "module",
-  "version": "0.0.1",
   "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro check && astro build",
-    "preview": "astro preview",
-    "astro": "astro"
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "lint": "eslint .",
+    "typecheck": "nuxt typecheck"
   },
   "dependencies": {
-    "@astrojs/check": "^0.7.0",
-    "@astrojs/react": "^3.6.0",
-    "@astrojs/sitemap": "^3.1.6",
-    "@astrojs/tailwind": "^5.1.0",
-    "@playform/compress": "^0.0.13",
-    "@types/react": "^18.3.3",
-    "@types/react-dom": "^18.3.0",
-    "astro": "^4.11.1",
-    "astro-robots-txt": "^1.0.0",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "react-icons": "^5.2.1",
-    "tailwindcss": "^3.4.4",
-    "typescript": "^5.5.2"
-  }
+    "@iconify-json/lucide": "^1.2.102",
+    "@iconify-json/simple-icons": "^1.2.78",
+    "@nuxt/ui": "^4.6.1",
+    "nuxt": "^4.4.2",
+    "tailwindcss": "^4.2.2"
+  },
+  "devDependencies": {
+    "@nuxt/eslint": "^1.15.2",
+    "eslint": "^10.2.0",
+    "typescript": "^6.0.2",
+    "vue-tsc": "^3.2.6"
+  },
+  "packageManager": "pnpm@10.33.0"
 }
