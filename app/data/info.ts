@@ -16,23 +16,51 @@ const info: Info = {
   },
   work_experience: [
     {
-      company_name: "Raasta Research and Development",
+      company_name: "Tradio",
       description: [
-        "Leading the development of their official website to enhance online presence and user experience.",
-        "Implementing data extraction solutions for biodiversity research and sustainable development initiatives.",
+        "Led frontend engineering of a real-time trading MVP using React.js, Next.js, TypeScript, Redux, HTML5, CSS3, and Firebase with low-latency WebSocket updates.",
+        "Built cross-platform mobile apps with React Native and responsive web apps, reducing load times by 40% and achieving Lighthouse scores of 95+.",
+        "Owned integrations with Node.js REST APIs and Python microservices in scalable cloud deployments.",
+        "Developed analytics tools improving user engagement and onboarding completion by 30%.",
+        "Managed Agile sprints via JIRA, leading code reviews and feature prioritization.",
+      ],
+      start: "September 2025",
+      end: "Present",
+      location: "Remote",
+      position: "Co-Founder / Founding Engineer",
+      skills: [
+        "React.js",
+        "Next.js",
+        "TypeScript",
+        "Redux",
+        "Firebase",
+        "React Native",
+        "Node.js",
+        "Python",
+        "JIRA",
+        "Agile",
+      ],
+    },
+    {
+      company_name: "Raasta R&D",
+      description: [
+        "Engineered a website with blog and admin dashboard using Next.js, JavaScript, TypeScript, HTML5, and CSS3.",
+        "Developed internal role-based tools and dashboards consuming dynamic APIs.",
+        "Automated pipelines processing 50,000+ PDFs, reducing manual effort by 80%.",
+        "Led and contributed to national-level AI/ML workshops on sustainability.",
       ],
       start: "September 2024",
-      end: "Present",
-      location: "Haldwani",
+      end: "August 2025",
+      location: "India",
       position: "Software Developer",
       skills: [
         "Next.js",
         "Python",
-        "CSS",
+        "CSS3",
+        "HTML5",
         "JavaScript",
-        "React.js",
-        "React Native",
         "TypeScript",
+        "React.js",
         "Tailwind CSS",
         "SQL",
         "PostgreSQL",
@@ -46,7 +74,7 @@ const info: Info = {
       description: [
         "Managed daily tasks and project targets, ensuring timely delivery and effective collaboration.",
         "Developed and integrated a workspace section using Django, HTML, CSS, and JavaScript, enabling user collaboration with role-based permissions.",
-        " Created a finance module for invoice generation and viewing, streamlining financial operations.",
+        "Created a finance module for invoice generation and viewing, streamlining financial operations.",
         "Deployed the project on AWS EC2, configured Nginx, and linked the domain for seamless access, enhancing overall user experience.",
       ],
       start: "May 2022",
@@ -63,7 +91,7 @@ const info: Info = {
       course: "Bachelor of Computer Applications",
       institution: "Graphic Era Hill University",
       start: "September 2022",
-      end: "Present",
+      end: "June 2025",
       location: "Bhimtal, Uttarakhand",
     },
     {
@@ -88,7 +116,7 @@ const info: Info = {
   },
   certifications: [
     {
-      link: "https://drive.g  oogle.com/file/d/11mY6EPsHumObNIF5BvoU-1eayUTOR8PN/view?usp=sharing",
+      link: "https://drive.google.com/file/d/11mY6EPsHumObNIF5BvoU-1eayUTOR8PN/view?usp=sharing",
       name: "Machine Learning and its applications in Information Security, Computer Vision and Natural Language",
     },
     {
@@ -99,6 +127,18 @@ const info: Info = {
       link: "https://www.udemy.com/certificate/UC-9c01ddc5-1abb-4f1a-af9a-0a48d4e123ce/",
       name: "Complete React Developer (w/ Redux, Hooks, GraphQL)",
     },
+    {
+      link: "https://www.linkedin.com/learning/certificates/227f42a2d998a19cf0b94b2ea2205de34727186873c95087925e09fc5b66713c",
+      name: "React Native Essential Training -- LinkedIn Learning",
+    },
+    {
+      link: "https://www.linkedin.com/learning/certificates/8e4376df2e9bf808e96fd21e6ba13543a6f2c8d07502f96d8a417f0c360ed4dd",
+      name: "Agile Software Development -- LinkedIn Learning",
+    },
+    {
+      link: "https://www.linkedin.com/learning/certificates/5bed7e285a16408546bac26fc1e167511462d3d67b3c8109b11a907f0164e1e3",
+      name: "Docker Foundations Professional Certificate",
+    },
   ],
   projects: projects,
   skills: [
@@ -106,8 +146,8 @@ const info: Info = {
     "CSS",
     "JavaScript",
     "Python",
-    "PHP",
     "ReactJS",
+    "React Native",
     "NextJS",
     "NodeJS",
     "Django",
@@ -117,6 +157,8 @@ const info: Info = {
     "MongoDB",
     "Docker",
     "SQL",
+    "Firebase",
+    "Typescript",
   ],
 };
 

@@ -9,7 +9,7 @@ const posts = [
   { id: 4, image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=600&h=600&fit=crop' },
 ]
 
-const activeTab = ref('posts')
+const activeTab = ref('projects')
 const activeStory = ref<null | any>(null)
 
 const handleOpenStory = (highlight: any) => {

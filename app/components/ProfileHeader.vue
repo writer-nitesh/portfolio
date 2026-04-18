@@ -64,15 +64,26 @@ const shareProfile = async () => {
     <div>
       <div class="flex flex-row md:gap-10 gap-4">
         <!-- Avatar -->
-        <div>
-          <div class="size-28 md:size-36 rounded-full overflow-hidden relative group cursor-pointer">
-            <img :src="info.profile_image" alt="Profile" class="w-full h-full object-cover" />
-          </div>
+        <div class="shrink-0">
+          <NuxtLink to="/devcard"
+            class="block size-28 md:size-36 rounded-full p-1 border-[3px] border-green-500 dark:border-green-400 relative group cursor-pointer">
+            <div class="relative w-full h-full rounded-full overflow-hidden">
+              <img :src="info.profile_image" alt="Profile" class="w-full h-full object-cover" />
+              <!-- Hover Overlay -->
+              <div
+                class="absolute inset-0 bg-neutral-800/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[2px]">
+                <Icon name="lucide:external-link" class="size-6 text-white" />
+              </div>
+            </div>
+          </NuxtLink>
         </div>
 
         <div class="flex flex-col flex-1 gap-4">
           <div class="flex items-center gap-4">
-            <h1 class="text-2xl font-medium">{{ info.username }}</h1>
+            <div class="flex items-center gap-2">
+              <h1 class="text-2xl font-medium">{{ info.username }}</h1>
+              <Icon name="mdi:tick-decagram" class="text-blue-500 text-md" />
+            </div>
             <div class="hidden md:flex md:flex-row gap-2">
               <UButton size="md" color="neutral">
                 <NuxtLink to="/resume/Nitesh_Software_Developer_Resume.pdf" external download>
