@@ -60,7 +60,7 @@ const shareProfile = async () => {
 </script>
 
 <template>
-  <section class="flex flex-col justify-center items-center py-8 px-2 md:px-4 gap-4">
+  <section class="flex flex-col justify-center items-center pt-8 pb-2 px-2 md:px-4 gap-4">
     <div>
       <div class="flex flex-row md:gap-10 gap-4">
         <!-- Avatar -->
