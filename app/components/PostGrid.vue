@@ -13,6 +13,28 @@ const openProject = (project: any) => {
   selectedProject.value = { ...project, showFullDesc: false }
   isModalOpen.value = true
 }
+
+const shareProject = async () => {
+  if (!selectedProject.value) return
+  
+  const linkToShare = selectedProject.value.links?.live || selectedProject.value.links?.source
+  if (!linkToShare) return
+
+  if (navigator.share) {
+    try {
+      await navigator.share({
+        title: selectedProject.value.name,
+        text: `Check out ${selectedProject.value.name} by ${info.username}`,
+        url: linkToShare
+      })
+    } catch (err) {
+      console.log('Error sharing:', err)
+    }
+  } else {
+    navigator.clipboard.writeText(linkToShare)
+    alert('Link copied to clipboard!')
+  }
+}
 </script>
 
 <template>
@@ -221,7 +243,7 @@ const openProject = (project: any) => {
                       class="text-2xl hover:text-neutral-500 dark:hover:text-neutral-400 cursor-pointer transition-colors" />
                     <Icon name="uil:comment"
                       class="text-2xl hover:text-neutral-500 dark:hover:text-neutral-400 cursor-pointer transition-colors" />
-                    <Icon name="mynaui:send"
+                    <Icon name="mynaui:send" @click="shareProject"
                       class="text-2xl hover:text-neutral-500 dark:hover:text-neutral-400 cursor-pointer transition-colors" />
                   </div>
                   <Icon name="uil:bookmark"
@@ -294,7 +316,7 @@ const openProject = (project: any) => {
                     <span class="text-[15px] font-semibold">9.3K</span>
                   </div>
                   <div class="flex items-center gap-1.5">
-                    <Icon name="mynaui:send" class="text-[24px]" />
+                    <Icon name="mynaui:send" class="text-[24px] cursor-pointer" @click="shareProject" />
                     <span class="text-[15px] font-semibold">13K</span>
                   </div>
                 </div>

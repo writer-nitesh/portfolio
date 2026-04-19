@@ -19,7 +19,10 @@
   },
   "devDependencies": {
     "@nuxt/eslint": "^1.15.2",
+    "@nuxtjs/robots": "^6.0.7",
+    "@nuxtjs/sitemap": "^8.0.13",
     "eslint": "^10.2.0",
+    "nuxt-llms": "^0.2.0",
     "typescript": "^6.0.2",
     "vue-tsc": "^3.2.6"
   },

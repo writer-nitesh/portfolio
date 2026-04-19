@@ -38,6 +38,8 @@ const displayUrl = computed(() =>
   info.url.replace('https://', '').replace(/\/$/, '')
 )
 
+const showMoreInfo = ref(false)
+
 // Native share or clipboard fallback
 const shareProfile = async () => {
   const shareData = {
@@ -68,7 +70,8 @@ const shareProfile = async () => {
           <NuxtLink to="/devcard"
             class="block size-28 md:size-36 rounded-full p-1 border-[3px] border-green-500 dark:border-green-400 relative group cursor-pointer">
             <div class="relative w-full h-full rounded-full overflow-hidden">
-              <img :src="info.profile_image" alt="Profile" class="w-full h-full object-cover" />
+              <img :src="info.profile_image" alt="Profile" fetchpriority="high" loading="eager"
+                class="w-full h-full object-cover" />
               <!-- Hover Overlay -->
               <div
                 class="absolute inset-0 bg-neutral-800/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[2px]">
@@ -109,10 +112,29 @@ const shareProfile = async () => {
             <span class="font-medium">
               <Icon name="bxs:map" />
               <Icon name="noto:mountain" />
-              {{ info.location.city }},{{ info.location.state }}
+              {{ info.location.state }},{{ info.location.country }}
             </span>
 
-            <span class="text-sm">{{ info.bio }}</span>
+
+            <div class="text-sm w-md ">
+              <span class="whitespace-pre-wrap flex flex-col">
+                <span>
+                  {{ info.bio }}
+
+                  <button v-if="!showMoreInfo" @click="showMoreInfo = true"
+                    class="text-neutral-500 hover:text-neutral-400 ml-1 inline-block font-medium">
+                    more
+                  </button>
+                </span>
+
+
+                <div v-if="showMoreInfo">
+                  <span class="mt-2">{{ info.description }}</span>
+                  <button @click="showMoreInfo = false"
+                    class="text-neutral-500 hover:text-neutral-400 inline-block font-medium ml-1">less</button>
+                </div>
+              </span>
+            </div>
             <div class="flex items-center flex-wrap gap-3 text-sm">
               <NuxtLink :href="info.url" target="_blank" class="text-blue-400 hover:underline flex items-center gap-1">
                 <Icon name="uil:link" />
@@ -141,9 +163,27 @@ const shareProfile = async () => {
         <span class="font-medium">
           <Icon name="bxs:map" />
           <Icon name="noto:mountain" />
-          {{ info.location.city }},{{ info.location.state }}
+          {{ info.location.state }},{{ info.location.country }}
         </span>
-        <span class="text-sm">{{ info.bio }}</span>
+        <div class="text-sm">
+          <span class="whitespace-pre-wrap flex flex-col">
+            <span>
+              {{ info.bio }}
+
+              <button v-if="!showMoreInfo" @click="showMoreInfo = true"
+                class="text-neutral-500 hover:text-neutral-400 ml-1 inline-block font-medium">
+                more
+              </button>
+            </span>
+
+
+            <div v-if="showMoreInfo">
+              <span class="mt-2">{{ info.description }}</span>
+              <button @click="showMoreInfo = false"
+                class="text-neutral-500 hover:text-neutral-400 inline-block font-medium ml-1">less</button>
+            </div>
+          </span>
+        </div>
         <div class="flex items-center flex-wrap gap-3 text-sm">
 
           <NuxtLink :href="info.url" target="_blank" class="text-blue-400 hover:underline flex items-center gap-1">

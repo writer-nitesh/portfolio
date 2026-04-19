@@ -1,9 +1,12 @@
 <script setup lang="ts">
 import { ref, computed, onMounted, onUnmounted } from 'vue'
 
+const DEFAULT_ROT_X = 0
+const DEFAULT_ROT_Y = 0
+
 const containerRef = ref<HTMLElement | null>(null)
-const rotateX = ref(0)
-const rotateY = ref(0)
+const rotateX = ref(DEFAULT_ROT_X)
+const rotateY = ref(DEFAULT_ROT_Y)
 const mouseX = ref(50)
 const mouseY = ref(50)
 const isOutside = ref(true)
@@ -27,8 +30,8 @@ const handleMouseMove = (e: MouseEvent) => {
 
 const handleMouseLeave = () => {
     isOutside.value = true
-    rotateX.value = 0
-    rotateY.value = 0
+    rotateX.value = DEFAULT_ROT_X
+    rotateY.value = DEFAULT_ROT_Y
     mouseX.value = 50
     mouseY.value = 50
 }
@@ -94,8 +97,8 @@ const glareStyle = computed(() => {
 const toggleFlip = () => {
     isFlipped.value = !isFlipped.value
     // Reset tilt on flip for a smooth transition
-    rotateX.value = 0
-    rotateY.value = 0
+    rotateX.value = DEFAULT_ROT_X
+    rotateY.value = DEFAULT_ROT_Y
     mouseX.value = 50
     mouseY.value = 50
 }
@@ -111,7 +114,7 @@ const toggleFlip = () => {
             <!-- Front side -->
             <div
                 class="card-front absolute inset-0 backface-hidden rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.3)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.7)] group overflow-hidden">
-                <img src="/images/card/Front.png" alt="DevCard Front" class="w-full h-full object-cover" />
+                <img src="/images/card/Front.png" alt="DevCard Front" fetchpriority="high" loading="eager" class="w-full h-full object-cover" />
                 <!-- Glare effect overlay -->
                 <div class="absolute inset-0 transition-opacity duration-300 pointer-events-none" :style="glareStyle">
                 </div>
@@ -120,7 +123,7 @@ const toggleFlip = () => {
             <!-- Back side -->
             <div class="card-back absolute inset-0 backface-hidden rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.3)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.7)] group overflow-hidden"
                 style="transform: rotateY(180deg);">
-                <img src="/images/card/Back.png" alt="DevCard Back" class="w-full h-full object-cover" />
+                <img src="/images/card/Back.png" alt="DevCard Back" loading="lazy" class="w-full h-full object-cover" />
                 <!-- Glare effect overlay -->
                 <div class="absolute inset-0 transition-opacity duration-300 pointer-events-none" :style="glareStyle">
                 </div>

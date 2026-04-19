@@ -6,6 +6,7 @@ const projects: Array<Project> = [
     description: [
       "A web app for listening to ad-free music and downloading tracks effortlessly, even on the go.",
       "Inspired by a real-life experience of losing internet connectivity while traveling on a college bus, leading to the discovery of a music API and the development of an intuitive UI to address this need.",
+      "Now not working because Jio Saavan fixed their API",
     ],
     links: {
       live: "https://freemusic4all.pages.dev/",
@@ -102,7 +103,7 @@ const projects: Array<Project> = [
     start: "",
     end: "",
     technology_used: ["React JS", "Tailwind CSS"],
-    image: "/assets/images/tipsy_text.png",
+    image: "/images/projects/tipsy_text.png",
   },
   {
     name: "Reactive",

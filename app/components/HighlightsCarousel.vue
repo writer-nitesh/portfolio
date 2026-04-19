@@ -45,7 +45,7 @@ const scroll = (direction: 'left' | 'right') => {
             <!-- Inner Avatar Container -->
             <div
               class="w-full h-full rounded-full border-[3px] border-white dark:border-[#121212] overflow-hidden flex items-center justify-center bg-white dark:bg-[#121212]">
-              <img :src="h.coverImage" :alt="h.title" class="w-full h-full object-cover">
+              <img :src="h.coverImage" :alt="h.title" class="w-full h-full object-cover" loading="lazy">
             </div>
           </div>
           <span class="text-xs w-full truncate text-center font-medium">{{ h.title }}</span>

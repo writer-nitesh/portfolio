@@ -1,13 +1,35 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+import { useHead, useSeoMeta } from '#imports'
 import { highlights } from '~/data/highlights'
+import info from '~/data/info'
 
-const posts = [
-  { id: 1, image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&h=600&fit=crop' },
-  { id: 2, image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=600&fit=crop' },
-  { id: 3, image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&h=600&fit=crop' },
-  { id: 4, image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=600&h=600&fit=crop' },
-]
+useSeoMeta({
+  title: `${info.name} | Software Developer`,
+  description: info.description,
+  ogTitle: `${info.name} | Software Developer`,
+  ogDescription: info.description,
+  ogImage: '/images/nitesh_singh_software_developer_og_image.jpeg',
+  ogUrl: info.url,
+  twitterTitle: `${info.name} | Software Developer`,
+  twitterDescription: info.description,
+  twitterImage: '/images/nitesh_singh_software_developer_og_image.jpeg',
+  twitterCard: 'summary_large_image',
+})
+
+useHead({
+  htmlAttrs: {
+    lang: 'en'
+  },
+  link: [
+    { rel: 'icon', type: 'image/x-icon', href: '/images/icons/favicon.ico' },
+    { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/images/icons/favicon-32x32.png' },
+    { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/images/icons/favicon-16x16.png' },
+    { rel: 'apple-touch-icon', sizes: '180x180', href: '/images/icons/apple-touch-icon.png' },
+    { rel: 'canonical', href: info.url }
+  ]
+})
+
 
 const activeTab = ref('projects')
 const activeStory = ref<null | any>(null)
@@ -30,8 +52,8 @@ const handleCloseStory = () => {
 
     <ProfileTabs v-model="activeTab" />
 
-    <PostGrid :active-tab="activeTab" :posts="posts" />
+    <PostGrid :active-tab="activeTab" />
 
-    <StoryViewer v-if="activeStory" :story="activeStory" @close="handleCloseStory" />
+    <LazyStoryViewer v-if="activeStory" :story="activeStory" @close="handleCloseStory" />
   </div>
 </template>

@@ -5,7 +5,9 @@ const info: Info = {
   username: "writer-nitesh",
   name: "Nitesh Singh",
   gender: "Male",
-  bio: "Developing real life super power",
+  bio: "Developing real life super power ✨ ",
+  description:
+    "I am a software developer with experience in web development and mobile development. I am passionate about building innovative, creative and user-friendly applications.",
   url: "https://ni30.vercel.app/",
   profile_image: "/images/profile.jpg",
 

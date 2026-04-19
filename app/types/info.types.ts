@@ -53,6 +53,7 @@ export interface Info {
   username: string;
   name: string;
   bio: string;
+  description: string;
   profile_image?: string;
   gender: "Male" | "Female" | "Other";
   url: string;
