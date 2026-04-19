@@ -3,16 +3,21 @@ import { ref } from 'vue'
 import { useHead, useSeoMeta } from '#imports'
 import info from '~/data/info'
 
+const OG_IMAGE = 'https://ni30.vercel.app/images/nitesh_singh_software_developer_og_image.jpeg'
+
 useSeoMeta({
   title: `${info.name} | Software Developer`,
   description: `Bug Production License. ${info.description}`,
   ogTitle: `${info.name} | Software Developer`,
   ogDescription: `Bug Production License. ${info.description}`,
-  ogImage: '/images/nitesh_singh_software_developer_og_image.jpeg',
+  ogImage: OG_IMAGE,
+  ogImageWidth: 1200,
+  ogImageHeight: 630,
   ogUrl: `${info.url}devcard`,
+  ogType: 'website',
   twitterTitle: `${info.name} | Software Developer`,
   twitterDescription: `Bug Production License. ${info.description}`,
-  twitterImage: '/images/nitesh_singh_software_developer_og_image.jpeg',
+  twitterImage: OG_IMAGE,
   twitterCard: 'summary_large_image',
 })
 

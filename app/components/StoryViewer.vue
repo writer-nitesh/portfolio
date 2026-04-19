@@ -14,9 +14,29 @@ const currentStoryIndex = ref(0)
 const storyProgress = ref(0)
 let storyTimer: any = null
 
+// Preload next image to avoid lag between slides
+const preloadImage = (src: string) => {
+  if (!src) return
+  const img = new Image()
+  img.src = src
+}
+
+const preloadNextImages = () => {
+  const nextIndex = currentStoryIndex.value + 1
+  if (nextIndex < props.story.images.length) {
+    preloadImage(props.story.images[nextIndex]!)
+  }
+  // Also preload one more ahead if available
+  const nextNextIndex = currentStoryIndex.value + 2
+  if (nextNextIndex < props.story.images.length) {
+    preloadImage(props.story.images[nextNextIndex]!)
+  }
+}
+
 const startStoryTimer = () => {
   clearInterval(storyTimer)
   storyProgress.value = 0
+  preloadNextImages()
   storyTimer = setInterval(() => {
     storyProgress.value += 2
     if (storyProgress.value >= 100) {
@@ -82,7 +102,18 @@ onUnmounted(() => {
 
       <!-- Image Area (Tappable sides) -->
       <div class="flex-1 w-full h-full relative flex items-center justify-center bg-black">
-        <img :src="story.images[currentStoryIndex]" class="w-full h-full object-contain pointer-events-none">
+        <img
+          v-for="(imgSrc, i) in story.images"
+          :key="imgSrc"
+          :src="imgSrc"
+          :fetchpriority="i === currentStoryIndex ? 'high' : 'low'"
+          :loading="i === currentStoryIndex || i === currentStoryIndex + 1 ? 'eager' : 'lazy'"
+          :class="[
+            'absolute inset-0 w-full h-full object-contain pointer-events-none transition-opacity duration-200',
+            i === currentStoryIndex ? 'opacity-100' : 'opacity-0'
+          ]"
+          decoding="async"
+        >
 
         <!-- Hidden Interaction overlay -->
         <div class="absolute inset-0 flex z-10 w-full h-full">

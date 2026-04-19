@@ -62,7 +62,7 @@ const shareProfile = async () => {
 </script>
 
 <template>
-  <section class="flex flex-col justify-center items-center pt-8 pb-2 px-2 md:px-4 gap-4">
+  <section class="flex flex-col justify-center items-center pt-8 pb-2 px-4 md:px-4 gap-4 overflow-x-hidden">
     <div>
       <div class="flex flex-row md:gap-10 gap-4">
         <!-- Avatar -->
@@ -84,7 +84,7 @@ const shareProfile = async () => {
         <div class="flex flex-col flex-1 gap-4">
           <div class="flex items-center gap-4">
             <div class="flex items-center gap-2">
-              <h1 class="text-2xl font-medium">{{ info.username }}</h1>
+              <h1 class="md:text-2xl text-lg font-medium">{{ info.username }}</h1>
               <Icon name="mdi:tick-decagram" class="text-blue-500 text-md" />
             </div>
             <div class="hidden md:flex md:flex-row gap-2">
@@ -95,7 +95,7 @@ const shareProfile = async () => {
               </UButton>
               <UButton size="md" color="neutral" @click="shareProfile">Share profile</UButton>
             </div>
-            <UColorModeButton />
+            <UColorModeButton class="ml-auto" />
           </div>
 
           <!-- Stats -->
@@ -150,16 +150,23 @@ const shareProfile = async () => {
           </div>
 
           <!-- Action Buttons (Mobile) -->
-          <div class="flex md:hidden gap-2 w-full">
-            <UButton size="md" color="neutral">Download CV</UButton>
-            <UButton size="md" color="neutral" @click="shareProfile">Share profile</UButton>
+          <div class="flex md:hidden gap-2 w-full items-center">
+            <UButton size="md" color="neutral" class="flex-1 justify-center">
+              <NuxtLink to="/resume/Nitesh_Software_Developer_Resume.pdf" external download
+                class="w-full text-center md:text-base text-xs">
+                Download CV
+              </NuxtLink>
+            </UButton>
+            <UButton size="md" color="neutral" class="flex-1 justify-center md:text-base text-xs" @click="shareProfile">
+              Share profile
+            </UButton>
           </div>
         </div>
       </div>
 
       <!-- Bio & Links (Mobile) -->
       <div class="md:hidden flex flex-col mt-4 gap-1">
-        <span class="font-bold">{{ info.name }}</span>
+        <span class="font-bold md:text-base text-xs">{{ info.name }}</span>
         <span class="font-medium">
           <Icon name="bxs:map" />
           <Icon name="noto:mountain" />

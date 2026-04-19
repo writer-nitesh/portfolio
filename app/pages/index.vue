@@ -4,16 +4,21 @@ import { useHead, useSeoMeta } from '#imports'
 import { highlights } from '~/data/highlights'
 import info from '~/data/info'
 
+const OG_IMAGE = 'https://ni30.vercel.app/images/nitesh_singh_software_developer_og_image.jpeg'
+
 useSeoMeta({
   title: `${info.name} | Software Developer`,
   description: info.description,
   ogTitle: `${info.name} | Software Developer`,
   ogDescription: info.description,
-  ogImage: '/images/nitesh_singh_software_developer_og_image.jpeg',
+  ogImage: OG_IMAGE,
+  ogImageWidth: 1200,
+  ogImageHeight: 630,
   ogUrl: info.url,
+  ogType: 'website',
   twitterTitle: `${info.name} | Software Developer`,
   twitterDescription: info.description,
-  twitterImage: '/images/nitesh_singh_software_developer_og_image.jpeg',
+  twitterImage: OG_IMAGE,
   twitterCard: 'summary_large_image',
 })
 
