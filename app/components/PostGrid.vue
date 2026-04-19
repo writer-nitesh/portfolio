@@ -142,13 +142,14 @@ const shareProject = async () => {
 
     <!-- Project Post Modal (Instagram Style) -->
     <Teleport to="body">
-      <div v-if="isModalOpen && selectedProject"
-        class="fixed inset-0 z-[100] flex items-center justify-center p-0 sm:p-4">
+    <div v-if="isModalOpen && selectedProject"
+        class="fixed inset-0 z-[100] flex items-end sm:items-center justify-center">
         <!-- Backdrop -->
         <div class="absolute inset-0 bg-white/80 dark:bg-black/80 backdrop-blur-sm" @click="isModalOpen = false"></div>
 
         <div
-          class="relative flex flex-col md:flex-row h-full sm:h-[85vh] md:h-[600px] w-full max-w-4xl mx-auto overflow-hidden sm:rounded-md shadow-2xl z-10 bg-white dark:bg-black md:border md:border-neutral-200 dark:md:border-neutral-800">
+          class="relative flex flex-col md:flex-row w-full max-w-4xl mx-auto overflow-hidden md:rounded-md shadow-2xl z-10 bg-white dark:bg-black md:border md:border-neutral-200 dark:md:border-neutral-800
+                 h-full md:h-[600px] sm:h-[90vh] sm:rounded-t-2xl">
 
           <!-- ============================ -->
           <!-- Desktop Side-by-Side Layout  -->
@@ -267,7 +268,7 @@ const shareProject = async () => {
           <!-- Mobile Native Feed Layout    -->
           <!-- ============================ -->
           <div
-            class="flex flex-col md:hidden w-full h-full bg-white dark:bg-black overflow-y-auto hide-scrollbar pb-10">
+            class="flex flex-col md:hidden w-full h-full max-w-full bg-white dark:bg-black overflow-y-auto overflow-x-hidden hide-scrollbar pb-safe">
             <!-- Header -->
             <div class="flex items-center justify-between p-3 shrink-0">
               <div class="flex items-center gap-4">
@@ -294,10 +295,10 @@ const shareProject = async () => {
 
             <!-- Image -->
             <div
-              class="w-full shrink-0 relative bg-neutral-100 dark:bg-neutral-950 flex items-center justify-center min-h-[300px]">
+              class="w-full shrink-0 relative bg-neutral-100 dark:bg-neutral-950 flex items-center justify-center" style="min-height: 220px; max-height: 50vh;">
               <img v-if="selectedProject.image" :src="selectedProject.image"
                 @error="(e) => (e.target as HTMLImageElement).src = 'https://placehold.co/400x500/171717/white?text=' + encodeURIComponent(selectedProject.name)"
-                class="w-full h-auto max-h-[70vh] object-contain" />
+                class="w-full h-full object-contain" style="max-height: 50vh;" />
               <div v-else class="w-full aspect-square flex items-center justify-center">
                 <Icon name="uil:folder" class="text-7xl text-neutral-400 dark:text-neutral-600" />
               </div>

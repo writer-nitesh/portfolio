@@ -91,7 +91,15 @@ onUnmounted(() => {
       <!-- Story Header -->
       <div class="absolute top-4 left-0 w-full p-4 flex items-center justify-between z-20 pt-6">
         <div class="flex items-center gap-3 drop-shadow-md">
-          <img :src="story.coverImage" class="w-8 h-8 rounded-full border border-white/40 object-cover">
+          <NuxtImg
+            :src="story.coverImage"
+            class="w-8 h-8 rounded-full border border-white/40 object-cover"
+            width="32"
+            height="32"
+            fit="cover"
+            format="webp"
+            loading="eager"
+          />
           <span class="font-semibold text-sm text-white">{{ story.title }}</span>
         </div>
 
@@ -102,7 +110,7 @@ onUnmounted(() => {
 
       <!-- Image Area (Tappable sides) -->
       <div class="flex-1 w-full h-full relative flex items-center justify-center bg-black">
-        <img
+        <NuxtImg
           v-for="(imgSrc, i) in story.images"
           :key="imgSrc"
           :src="imgSrc"
@@ -112,8 +120,13 @@ onUnmounted(() => {
             'absolute inset-0 w-full h-full object-contain pointer-events-none transition-opacity duration-200',
             i === currentStoryIndex ? 'opacity-100' : 'opacity-0'
           ]"
+          width="400"
+          height="710"
+          fit="contain"
+          format="webp"
+          quality="80"
           decoding="async"
-        >
+        />
 
         <!-- Hidden Interaction overlay -->
         <div class="absolute inset-0 flex z-10 w-full h-full">

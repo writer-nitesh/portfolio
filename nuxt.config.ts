@@ -7,6 +7,7 @@ export default defineNuxtConfig({
     "@nuxtjs/robots",
     "@nuxtjs/sitemap",
     "nuxt-llms",
+    "@nuxt/image",
   ],
 
   devtools: {
@@ -80,6 +81,25 @@ export default defineNuxtConfig({
   sourcemap: {
     server: false,
     client: false,
+  },
+
+  // --- Image Optimization ---
+  image: {
+    // Use Vercel image provider in production, IPX locally
+    provider: 'vercel',
+    // Fallback to IPX for local dev
+    providers: {
+      ipx: {},
+    },
+    quality: 80,
+    format: ['webp', 'avif'],
+    screens: {
+      xs: 320,
+      sm: 640,
+      md: 768,
+      lg: 1024,
+      xl: 1280,
+    },
   },
 
   vite: {

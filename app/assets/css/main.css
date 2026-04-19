@@ -16,3 +16,15 @@
   --color-green-900: #0A5331;
   --color-green-950: #052E16;
 }
+
+/* Prevent horizontal overflow globally */
+html,
+body {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+/* iOS safe area padding for modals */
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom, 1rem);
+}

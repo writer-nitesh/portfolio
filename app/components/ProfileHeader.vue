@@ -70,8 +70,17 @@ const shareProfile = async () => {
           <NuxtLink to="/devcard"
             class="block size-28 md:size-36 rounded-full p-1 border-[3px] border-green-500 dark:border-green-400 relative group cursor-pointer">
             <div class="relative w-full h-full rounded-full overflow-hidden">
-              <img :src="info.profile_image" alt="Profile" fetchpriority="high" loading="eager"
-                class="w-full h-full object-cover" />
+              <NuxtImg
+                :src="info.profile_image"
+                alt="Profile"
+                fetchpriority="high"
+                loading="eager"
+                width="144"
+                height="144"
+                fit="cover"
+                format="webp"
+                class="w-full h-full object-cover"
+              />
               <!-- Hover Overlay -->
               <div
                 class="absolute inset-0 bg-neutral-800/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[2px]">
