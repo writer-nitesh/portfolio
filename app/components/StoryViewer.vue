@@ -67,81 +67,83 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <!-- Full dark backdrop always for stories, similar to Instagram -->
-  <div class="fixed inset-0 z-100 bg-black/80 backdrop-blur-md flex flex-col items-center justify-center">
+  <Teleport to="body">
+    <!-- Full dark backdrop always for stories, similar to Instagram -->
+    <div class="fixed inset-0 z-[100] bg-black/80 backdrop-blur-md flex flex-col items-center justify-center">
 
-    <!-- Desktop Close Button (Outside the viewing area) -->
-    <UButton @click="emit('close')" color="neutral" variant="ghost" icon="i-heroicons-x-mark-20-solid"
-      class="hidden md:flex absolute top-4 right-4 z-50 text-white opacity-80 hover:opacity-100 hover:bg-white/10"
-      size="xl" />
+      <!-- Desktop Close Button (Outside the viewing area) -->
+      <UButton @click="emit('close')" color="neutral" variant="ghost" icon="i-heroicons-x-mark-20-solid"
+        class="hidden md:flex absolute top-4 right-4 z-50 text-white opacity-80 hover:opacity-100 hover:bg-white/10"
+        size="xl" />
 
-    <div
-      class="w-full h-full md:max-w-[400px] md:h-[95vh] md:rounded-xl overflow-hidden  shadow-2xl bg-[#111] flex flex-col relative">
+      <div
+        class="w-full h-full md:max-w-[400px] md:h-[95vh] md:rounded-xl overflow-hidden  shadow-2xl bg-[#111] flex flex-col relative">
 
-      <!-- Progress bars -->
-      <div class="absolute top-0 left-0 w-full flex gap-1 p-2 pt-4 bg-linear-to-b from-black/80 to-transparent z-20">
-        <div v-for="(photo, index) in story.images" :key="index"
-          class="h-1 flex-1 bg-white/30 rounded-full overflow-hidden">
-          <div class="h-full bg-white transition-all duration-100 ease-linear"
-            :style="{ width: index < currentStoryIndex ? '100%' : (index === currentStoryIndex ? `${storyProgress}%` : '0%') }">
+        <!-- Progress bars -->
+        <div class="absolute top-0 left-0 w-full flex gap-1 p-2 pt-4 bg-linear-to-b from-black/80 to-transparent z-20">
+          <div v-for="(photo, index) in story.images" :key="index"
+            class="h-1 flex-1 bg-white/30 rounded-full overflow-hidden">
+            <div class="h-full bg-white transition-all duration-100 ease-linear"
+              :style="{ width: index < currentStoryIndex ? '100%' : (index === currentStoryIndex ? `${storyProgress}%` : '0%') }">
+            </div>
           </div>
         </div>
-      </div>
 
-      <!-- Story Header -->
-      <div class="absolute top-4 left-0 w-full p-4 flex items-center justify-between z-20 pt-6">
-        <div class="flex items-center gap-3 drop-shadow-md">
+        <!-- Story Header -->
+        <div class="absolute top-4 left-0 w-full p-4 flex items-center justify-between z-20 pt-6">
+          <div class="flex items-center gap-3 drop-shadow-md">
+            <NuxtImg
+              :src="story.coverImage"
+              class="w-8 h-8 rounded-full border border-white/40 object-cover"
+              width="32"
+              height="32"
+              fit="cover"
+              format="webp"
+              loading="eager"
+            />
+            <span class="font-semibold text-sm text-white">{{ story.title }}</span>
+          </div>
+
+          <!-- Mobile View Close Button -->
+          <UButton @click="emit('close')" color="neutral" variant="ghost" icon="i-heroicons-x-mark-20-solid"
+            class="md:hidden text-white/80 hover:text-white" />
+        </div>
+
+        <!-- Image Area (Tappable sides) -->
+        <div class="flex-1 w-full h-full relative flex items-center justify-center bg-black">
           <NuxtImg
-            :src="story.coverImage"
-            class="w-8 h-8 rounded-full border border-white/40 object-cover"
-            width="32"
-            height="32"
-            fit="cover"
+            v-for="(imgSrc, i) in story.images"
+            :key="imgSrc"
+            :src="imgSrc"
+            :fetchpriority="i === currentStoryIndex ? 'high' : 'low'"
+            :loading="i === currentStoryIndex || i === currentStoryIndex + 1 ? 'eager' : 'lazy'"
+            :class="[
+              'absolute inset-0 w-full h-full object-contain pointer-events-none transition-opacity duration-200',
+              i === currentStoryIndex ? 'opacity-100' : 'opacity-0'
+            ]"
+            width="400"
+            height="710"
+            fit="contain"
             format="webp"
-            loading="eager"
+            quality="80"
+            decoding="async"
           />
-          <span class="font-semibold text-sm text-white">{{ story.title }}</span>
-        </div>
 
-        <!-- Mobile View Close Button -->
-        <UButton @click="emit('close')" color="neutral" variant="ghost" icon="i-heroicons-x-mark-20-solid"
-          class="md:hidden text-white/80 hover:text-white" />
-      </div>
+          <!-- Hidden Interaction overlay -->
+          <div class="absolute inset-0 flex z-10 w-full h-full">
+            <!-- Prev hit area - Left 30% of screen -->
+            <div class="w-[30%] bg-transparent h-full cursor-pointer tap-highlight-transparent"
+              @click="currentStoryIndex > 0 ? (currentStoryIndex--, startStoryTimer()) : null"></div>
 
-      <!-- Image Area (Tappable sides) -->
-      <div class="flex-1 w-full h-full relative flex items-center justify-center bg-black">
-        <NuxtImg
-          v-for="(imgSrc, i) in story.images"
-          :key="imgSrc"
-          :src="imgSrc"
-          :fetchpriority="i === currentStoryIndex ? 'high' : 'low'"
-          :loading="i === currentStoryIndex || i === currentStoryIndex + 1 ? 'eager' : 'lazy'"
-          :class="[
-            'absolute inset-0 w-full h-full object-contain pointer-events-none transition-opacity duration-200',
-            i === currentStoryIndex ? 'opacity-100' : 'opacity-0'
-          ]"
-          width="400"
-          height="710"
-          fit="contain"
-          format="webp"
-          quality="80"
-          decoding="async"
-        />
-
-        <!-- Hidden Interaction overlay -->
-        <div class="absolute inset-0 flex z-10 w-full h-full">
-          <!-- Prev hit area - Left 30% of screen -->
-          <div class="w-[30%] bg-transparent h-full cursor-pointer tap-highlight-transparent"
-            @click="currentStoryIndex > 0 ? (currentStoryIndex--, startStoryTimer()) : null"></div>
-
-          <!-- Next hit area - Right 70% of screen -->
-          <div class="flex-1 bg-transparent h-full cursor-pointer tap-highlight-transparent" @click="nextStoryImage">
+            <!-- Next hit area - Right 70% of screen -->
+            <div class="flex-1 bg-transparent h-full cursor-pointer tap-highlight-transparent" @click="nextStoryImage">
+            </div>
           </div>
         </div>
-      </div>
 
+      </div>
     </div>
-  </div>
+  </Teleport>
 </template>
 
 <style scoped>

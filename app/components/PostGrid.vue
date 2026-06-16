@@ -176,6 +176,12 @@ const shareProject = async () => {
                   </div>
                 </div>
                 <div class="flex gap-4 items-center">
+                  <div class="flex gap-1">
+                    <UButton v-if="selectedProject.links?.live" :to="selectedProject.links.live" target="_blank" size="xs"
+                      color="neutral" variant="ghost" icon="uil:external-link-alt" />
+                    <UButton v-if="selectedProject.links?.source" :to="selectedProject.links.source" target="_blank"
+                      size="xs" color="neutral" variant="ghost" icon="uil:github" />
+                  </div>
                   <a :href="info.social_links.linkedin" target="_blank"
                     class="text-blue-500 font-semibold text-sm hover:text-blue-600 transition-colors">Follow</a>
                   <UButton color="neutral" variant="ghost" icon="i-heroicons-x-mark"
