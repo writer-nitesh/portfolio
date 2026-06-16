@@ -16,7 +16,7 @@ const openProject = (project: any) => {
 
 const shareProject = async () => {
   if (!selectedProject.value) return
-  
+
   const linkToShare = selectedProject.value.links?.live || selectedProject.value.links?.source
   if (!linkToShare) return
 
@@ -132,7 +132,7 @@ const shareProject = async () => {
               <Icon name="uil:award" class="text-lg md:text-xl text-neutral-800 dark:text-white" />
             </div>
             <span class="text-neutral-800 dark:text-neutral-200 font-medium text-xs md:text-sm mt-1">{{ cert.name
-              }}</span>
+            }}</span>
           </div>
           <Icon name="uil:external-link-alt"
             class="text-neutral-400 dark:text-neutral-500 group-hover:text-neutral-800 dark:group-hover:text-white transition-colors text-lg flex-shrink-0 mt-1" />
@@ -142,13 +142,12 @@ const shareProject = async () => {
 
     <!-- Project Post Modal (Instagram Style) -->
     <Teleport to="body">
-    <div v-if="isModalOpen && selectedProject"
+      <div v-if="isModalOpen && selectedProject"
         class="fixed inset-0 z-[100] flex items-end sm:items-center justify-center">
         <!-- Backdrop -->
         <div class="absolute inset-0 bg-white/80 dark:bg-black/80 backdrop-blur-sm" @click="isModalOpen = false"></div>
 
-        <div
-          class="relative flex flex-col md:flex-row w-full max-w-4xl mx-auto overflow-hidden md:rounded-md shadow-2xl z-10 bg-white dark:bg-black md:border md:border-neutral-200 dark:md:border-neutral-800
+        <div class="relative flex flex-col md:flex-row w-full max-w-4xl mx-auto overflow-hidden md:rounded-md shadow-2xl z-10 bg-white dark:bg-black md:border md:border-neutral-200 dark:md:border-neutral-800
                  h-full md:h-[600px] sm:h-[90vh] sm:rounded-t-2xl">
 
           <!-- ============================ -->
@@ -176,13 +175,11 @@ const shareProject = async () => {
                     <Icon name="mdi:tick-decagram" class="text-blue-500 text-md" />
                   </div>
                 </div>
-                <div class="flex gap-2 items-center">
-                  <UButton v-if="selectedProject.links?.live" :to="selectedProject.links.live" target="_blank" size="xs"
-                    color="neutral" variant="ghost" icon="uil:external-link-alt" />
-                  <UButton v-if="selectedProject.links?.source" :to="selectedProject.links.source" target="_blank"
-                    size="xs" color="neutral" variant="ghost" icon="uil:github" />
+                <div class="flex gap-4 items-center">
+                  <a :href="info.social_links.linkedin" target="_blank"
+                    class="text-blue-500 font-semibold text-sm hover:text-blue-600 transition-colors">Follow</a>
                   <UButton color="neutral" variant="ghost" icon="i-heroicons-x-mark"
-                    class="ml-2 hover:bg-neutral-100 dark:hover:bg-neutral-800" @click="isModalOpen = false" />
+                    class="hover:bg-neutral-100 dark:hover:bg-neutral-800" @click="isModalOpen = false" />
                 </div>
               </div>
 
@@ -288,14 +285,15 @@ const shareProject = async () => {
                 </div>
               </div>
               <div class="flex items-center gap-3">
-                <span class="text-blue-500 font-semibold text-sm">Follow</span>
+                <a :href="info.social_links.linkedin" target="_blank"
+                  class="text-blue-500 font-semibold text-sm hover:text-blue-600 transition-colors">Follow</a>
                 <Icon name="uil:ellipsis-h" class="text-neutral-900 dark:text-white text-xl" />
               </div>
             </div>
 
             <!-- Image -->
-            <div
-              class="w-full shrink-0 relative bg-neutral-100 dark:bg-neutral-950 flex items-center justify-center" style="min-height: 220px; max-height: 50vh;">
+            <div class="w-full shrink-0 relative bg-neutral-100 dark:bg-neutral-950 flex items-center justify-center"
+              style="min-height: 220px; max-height: 50vh;">
               <img v-if="selectedProject.image" :src="selectedProject.image"
                 @error="(e) => (e.target as HTMLImageElement).src = 'https://placehold.co/400x500/171717/white?text=' + encodeURIComponent(selectedProject.name)"
                 class="w-full h-full object-contain" style="max-height: 50vh;" />
@@ -321,8 +319,8 @@ const shareProject = async () => {
                     <span class="text-[15px] font-semibold">13K</span>
                   </div>
                 </div>
-                <div>
-                  <Icon name="uil:bookmark" class="text-[26px] text-neutral-900 dark:text-white" />
+                <div class="flex items-center gap-3">
+                  <Icon name="uil:bookmark" class="text-[26px] text-neutral-900 dark:text-white ml-1" />
                 </div>
               </div>
 
@@ -338,9 +336,27 @@ const shareProject = async () => {
                 </span>
                 <span class="text-neutral-700 dark:text-neutral-100" v-else>
                   “{{ selectedProject.name }}” {{ selectedProject.description[0] }}
+
+                  <span v-if="selectedProject.links?.live" class="ml-1">
+                    <a :href="selectedProject.links.live" target="_blank"
+                      class="text-[#00376b] dark:text-[#e0f1ff] hover:underline whitespace-nowrap">
+                      🔗 Live Project
+                    </a>
+                  </span>
+                  <span v-if="selectedProject.links?.source" class="ml-1">
+                    <a :href="selectedProject.links.source" target="_blank"
+                      class="text-[#00376b] dark:text-[#e0f1ff] hover:underline whitespace-nowrap">
+                      💻 Source Code
+                    </a>
+                  </span>
+                  <br /><br />
                   <span v-for="tech in selectedProject.technology_used" :key="tech"
-                    class="text-blue-500 dark:text-blue-400 font-medium ml-1">#{{ tech.replace(/\s+/g, '').toLowerCase()
+                    class="text-[#00376b] dark:text-[#e0f1ff] ml-1 inline-block">#{{ tech.replace(/\s+/g,
+                      '').toLowerCase()
                     }}</span>
+
+                  <span class="text-neutral-500 dark:text-neutral-400 ml-1 font-normal block mt-1"
+                    @click.stop="selectedProject.showFullDesc = false">less</span>
                 </span>
               </div>
 

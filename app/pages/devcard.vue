@@ -3,7 +3,7 @@ import { ref } from 'vue'
 import { useHead, useSeoMeta } from '#imports'
 import info from '~/data/info'
 
-const OG_IMAGE = 'https://ni30.vercel.app/images/nitesh_singh_software_developer_og_image.jpeg'
+const OG_IMAGE = 'https://ni30.vercel.app/images/nitesh_singh_software_developer_og_image.png'
 
 useSeoMeta({
   title: `${info.name} | Software Developer`,

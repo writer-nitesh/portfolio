@@ -2,6 +2,52 @@ import type { Project } from "../types/projects.types";
 
 const projects: Array<Project> = [
   {
+    name: "Bhagavad Gita",
+    description: [
+      "Welcome to the Bhagavad Gita app, your ultimate spiritual companion. Dive deep into the divine wisdom of Lord Krishna and find peace, purpose, and clarity in your daily life.",
+      "The Bhagavad Gita is a timeless ancient Hindu scripture that offers profound philosophical insights and practical solutions to life's biggest challenges. Whether you are seeking spiritual growth, inner peace, or a better understanding of karma and dharma, this app brings the sacred teachings right to your fingertips.",
+      "🌟 Key Features:",
+      "• Completely Offline: No internet? No problem! Access the entire Bhagavad Gita anytime, anywhere without any internet connection.",
+      "• Dual Languages: Read all the Shlokas (verses) with complete translations and meanings in both Hindi and English.",
+      "• Easy Navigation: Jump to any Adhyay (Chapter) or Shloka effortlessly with a clean, user-friendly interface.",
+      "• Beautiful Design: Experience a calm, fast, and highly readable UI designed for peaceful reading sessions.",
+      "Why read the Bhagavad Gita?",
+      "The Gita is not just a religious text; it is a manual for life. It teaches us how to handle stress, perform our duties without attachment to the results, and live a life of righteousness.",
+      "Start your spiritual journey today. Download the Bhagavad Gita app and bring the divine words of Lord Krishna into your daily routine, even when you are entirely offline.",
+      "Jai Shree Krishna! 🙏",
+    ],
+    links: {
+      live: "https://play.google.com/store/apps/details?id=com.duniyalabs.bhagavadgita",
+    },
+    start: "",
+    end: "",
+    technology_used: ["expo", "react-native", "nativewind", "zustand"],
+    image: "/images/projects/gita_play_store_listing.png",
+  },
+  {
+    name: "TRADIO: ALGO & PAPER TRADING",
+    description: [
+      "Tradio is the fastest way to create, test, and paper trade trading strategies using real-time market data. Whether you're a beginner learning the market or a professional building advanced trading systems, Tradio gives you everything you need to trade smarter without risking real capital.",
+      "🚀 Key Features",
+      "📌 Algo Strategy Builder: Create your own trading strategies with simple conditions. Test ideas across stocks, Nifty, BankNifty, and F&O instruments.",
+      "📌 Real-Time Paper Trading: Place trades in live markets without using real money. Practice intraday, options, and swing trading safely.",
+      "📌 Fast Backtesting Engine: Check how your strategy performs on historical market data. View win rate, drawdown, P&L, and performance accuracy.",
+      "📌 Live Market Simulator: Experience real trading conditions with no capital risk. Perfect for beginners, students, and professional traders.",
+      "📌 Advanced Analytics: Track your trades, understand performance, and refine your edge. See charts, logs, metrics, and real-time trade updates.",
+      "🎯 Why Traders Love Tradio: No brokerage account needed. No capital required. Easy strategy builder. Accurate market simulation. Suitable for beginners & advanced traders.",
+      "📈 Who Is This App For? Algo traders, Options traders, Intraday & scalping traders, Students learning the stock market.",
+      "🔒 Trade Safely: Tradio is for educational and simulation purposes. There is no real money trading, no brokerage, and no financial risk.",
+    ],
+    links: {
+      live: "https://play.google.com/store/apps/details?id=com.tradiohub.tradio",
+    },
+    start: "",
+    end: "",
+    technology_used: ["expo", "react-native", "nativewind", "zustand"],
+    image: "/images/projects/tradio_play_store_listing.png",
+  },
+
+  {
     name: "freeMusic4All",
     description: [
       "A web app for listening to ad-free music and downloading tracks effortlessly, even on the go.",
@@ -128,20 +174,6 @@ const projects: Array<Project> = [
     technology_used: ["React JS", "Tailwind", "Typescript"],
     image:
       "https://github.com/writer-nitesh/thecodereport/raw/main/public/images/the_code_report.png",
-  },
-  {
-    name: "Personal portfolio website",
-    description: [
-      "This my personal portfolio website for showcasing projects and my website where people reach me out.",
-    ],
-    links: {
-      live: "https://ni30.vercel.app/",
-      source: "https://github.com/writer-nitesh/portfolio",
-    },
-    start: "September 2022",
-    end: "July 2024",
-    technology_used: ["Astro JS", "Tailwind", "Typescript"],
-    image: "/assets/images/preview.png",
   },
 ];
 
