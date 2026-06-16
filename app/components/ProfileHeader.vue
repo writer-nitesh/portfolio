@@ -125,15 +125,15 @@ const shareProfile = async () => {
             </span>
 
 
-            <div class="text-sm w-md">
-              <span class="whitespace-pre-wrap">
-                <span>{{ info.bio }}</span>
-                <span v-if="showMoreInfo">
-                  {{ info.description }}
-                  <button @click="showMoreInfo = false" class="text-neutral-500 hover:text-neutral-400 font-medium ml-1">less</button>
-                </span>
-                <button v-else @click="showMoreInfo = true" class="text-neutral-500 hover:text-neutral-400 font-medium ml-1">more</button>
+            <div class="text-sm w-md leading-relaxed">
+              <span>{{ info.bio }}</span>
+              <span v-if="!showMoreInfo">
+                <button @click="showMoreInfo = true" class="text-neutral-500 hover:text-neutral-400 font-medium ml-1">more</button>
               </span>
+              <div v-if="showMoreInfo" class="mt-1">
+                <span>{{ info.description }}</span>
+                <button @click="showMoreInfo = false" class="text-neutral-500 hover:text-neutral-400 font-medium ml-1">less</button>
+              </div>
             </div>
             <div class="flex items-center flex-wrap gap-3 text-sm">
               <NuxtLink :href="info.url" target="_blank" class="text-blue-400 hover:underline flex items-center gap-1">
@@ -172,15 +172,15 @@ const shareProfile = async () => {
           <Icon name="noto:mountain" />
           {{ info.location.state }},{{ info.location.country }}
         </span>
-        <div class="text-sm">
-          <span class="whitespace-pre-wrap">
-            <span>{{ info.bio }}</span>
-            <span v-if="showMoreInfo">
-              {{ info.description }}
-              <button @click="showMoreInfo = false" class="text-neutral-500 hover:text-neutral-400 font-medium ml-1">less</button>
-            </span>
-            <button v-else @click="showMoreInfo = true" class="text-neutral-500 hover:text-neutral-400 font-medium ml-1">more</button>
+        <div class="text-sm leading-relaxed">
+          <span>{{ info.bio }}</span>
+          <span v-if="!showMoreInfo">
+            <button @click="showMoreInfo = true" class="text-neutral-500 hover:text-neutral-400 font-medium ml-1">more</button>
           </span>
+          <div v-if="showMoreInfo" class="mt-1">
+            <span>{{ info.description }}</span>
+            <button @click="showMoreInfo = false" class="text-neutral-500 hover:text-neutral-400 font-medium ml-1">less</button>
+          </div>
         </div>
         <div class="flex items-center flex-wrap gap-3 text-sm">
 
