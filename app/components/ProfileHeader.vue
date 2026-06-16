@@ -63,7 +63,7 @@ const shareProfile = async () => {
 
 <template>
   <section class="flex flex-col justify-center items-center pt-8 pb-2 px-4 md:px-4 gap-4 overflow-x-hidden">
-    <div>
+    <div class="w-full overflow-hidden">
       <div class="flex flex-row md:gap-10 gap-4">
         <!-- Avatar -->
         <div class="shrink-0">
