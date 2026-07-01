@@ -64,23 +64,14 @@ const shareProfile = async () => {
 <template>
   <section class="flex flex-col justify-center items-center pt-8 pb-2 px-4 md:px-4 gap-4 overflow-x-hidden">
     <div class="w-full overflow-hidden">
-      <div class="flex flex-row md:gap-10 gap-4">
+      <div class="flex flex-row md:gap-10 gap-4 w-full md:w-fit mx-auto">
         <!-- Avatar -->
         <div class="shrink-0">
           <NuxtLink to="/devcard"
             class="block size-28 md:size-36 rounded-full p-1 border-[3px] border-green-500 dark:border-green-400 relative group cursor-pointer">
             <div class="relative w-full h-full rounded-full overflow-hidden">
-              <NuxtImg
-                :src="info.profile_image"
-                alt="Profile"
-                fetchpriority="high"
-                loading="eager"
-                width="144"
-                height="144"
-                fit="cover"
-                format="webp"
-                class="w-full h-full object-cover"
-              />
+              <NuxtImg :src="info.profile_image" alt="Profile" fetchpriority="high" loading="eager" width="144"
+                height="144" fit="cover" format="webp" class="w-full h-full object-cover" />
               <!-- Hover Overlay -->
               <div
                 class="absolute inset-0 bg-neutral-800/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[2px]">
@@ -96,19 +87,20 @@ const shareProfile = async () => {
               <h1 class="md:text-2xl text-lg font-medium">{{ info.username }}</h1>
               <Icon name="mdi:tick-decagram" class="text-blue-500 text-md" />
             </div>
-            <div class="hidden md:flex md:flex-row gap-2">
+            <div class="hidden md:flex md:flex-row gap-2 items-center">
               <UButton size="md" color="neutral">
                 <NuxtLink to="/resume/Nitesh_Software_Developer_Resume.pdf" external download>
                   Download CV
                 </NuxtLink>
               </UButton>
               <UButton size="md" color="neutral" @click="shareProfile">Share profile</UButton>
+              <UColorModeButton />
             </div>
-            <UColorModeButton class="ml-auto" />
+            <UColorModeButton class="ml-auto md:hidden" />
           </div>
 
           <!-- Stats -->
-          <div class="flex md:gap-8 gap-2">
+          <div class="flex w-full justify-between ">
             <div v-for="stat in stats" :key="stat.label" class="flex flex-col md:flex-row md:gap-2">
               <span class="font-bold">{{ stat.value }}</span>
               <span class="md:text-base text-xs">{{ stat.label }}</span>
@@ -116,7 +108,7 @@ const shareProfile = async () => {
           </div>
 
           <!-- Bio & Links (Desktop) -->
-          <div class="hidden md:flex flex-col gap-1">
+          <div class="hidden md:flex flex-col gap-1 ">
             <span class="font-bold">{{ info.name }}</span>
             <span class="font-medium">
               <Icon name="bxs:map" />
@@ -128,11 +120,13 @@ const shareProfile = async () => {
             <div class="text-sm w-md leading-relaxed">
               <span>{{ info.bio }}</span>
               <span v-if="!showMoreInfo">
-                <button @click="showMoreInfo = true" class="text-neutral-500 hover:text-neutral-400 font-medium ml-1">more</button>
+                <button @click="showMoreInfo = true"
+                  class="text-neutral-500 hover:text-neutral-400 font-medium ml-1">more</button>
               </span>
               <div v-if="showMoreInfo" class="mt-1">
                 <span>{{ info.description }}</span>
-                <button @click="showMoreInfo = false" class="text-neutral-500 hover:text-neutral-400 font-medium ml-1">less</button>
+                <button @click="showMoreInfo = false"
+                  class="text-neutral-500 hover:text-neutral-400 font-medium ml-1">less</button>
               </div>
             </div>
             <div class="flex items-center flex-wrap gap-3 text-sm">
@@ -165,7 +159,7 @@ const shareProfile = async () => {
       </div>
 
       <!-- Bio & Links (Mobile) -->
-      <div class="md:hidden flex flex-col mt-4 gap-1">
+      <div class="md:hidden flex flex-col mt-4 gap-1 max-w-3xl mx-auto">
         <span class="font-bold md:text-base text-xs">{{ info.name }}</span>
         <span class="font-medium">
           <Icon name="bxs:map" />
@@ -175,11 +169,13 @@ const shareProfile = async () => {
         <div class="text-sm leading-relaxed">
           <span>{{ info.bio }}</span>
           <span v-if="!showMoreInfo">
-            <button @click="showMoreInfo = true" class="text-neutral-500 hover:text-neutral-400 font-medium ml-1">more</button>
+            <button @click="showMoreInfo = true"
+              class="text-neutral-500 hover:text-neutral-400 font-medium ml-1">more</button>
           </span>
           <div v-if="showMoreInfo" class="mt-1">
             <span>{{ info.description }}</span>
-            <button @click="showMoreInfo = false" class="text-neutral-500 hover:text-neutral-400 font-medium ml-1">less</button>
+            <button @click="showMoreInfo = false"
+              class="text-neutral-500 hover:text-neutral-400 font-medium ml-1">less</button>
           </div>
         </div>
         <div class="flex items-center flex-wrap gap-3 text-sm">
